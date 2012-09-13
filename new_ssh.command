@@ -3,8 +3,6 @@ osascript -e 'tell application "Terminal"
 	tell application "System Events"
 		keystroke "n" using {command down}
 	end tell
-	tell window 1
-		set background color to {0, 0, 0}
-		set normal text color to "white"
-	end tell
 end tell'
+
+osascript -e 'tell application "Terminal"	to set current settings of first window to settings set "SSH"'
