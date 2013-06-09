@@ -1,12 +1,14 @@
 #!/usr/bin/perl
 
+require 'config.pl';
+
 $left = $ARGV[0];
 $right = $ARGV[1];
 
 if ($left && $right) {
-	system ("/Developer/Applications/Utilities/FileMerge.app/Contents/MacOS/FileMerge -left $left -right $right &");
+	system ("$filemerge_path -left $left -right $right &");
 } else {
-	system ("/Developer/Applications/Utilities/FileMerge.app/Contents/MacOS/FileMerge &");
+	system ("$filemerge_path &");
 }
 
 exit
