@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+open (TO_CLIPBOARD, "|pbcopy");
+
+my $password;
 my $passlength = $ARGV[0];
 $passlength = 16 if (!$passlength);
 
@@ -12,8 +15,11 @@ my $random_number;
 print "\n";
 for ($i=0 ; $i<$passlength ; $i++) {
 	$random_number = int(rand($charcount));
-	print $chars[$random_number];
+	$password .= $chars[$random_number];
 }
-print "\n\n";
+print "$password\n\n";
+print TO_CLIPBOARD $password;
+
+close TO_CLIPBOARD || die "Error TO_CLIPBOARD: $!";
 
 exit;

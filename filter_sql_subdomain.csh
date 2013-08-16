@@ -16,4 +16,9 @@ sed s,${site},${new_sql_prepend}.${site},g ${sql_file}_temp.sql > ${new_sql_prep
 rm -fr ${sql_file}_temp.sql
 echo ''
 
+echo 'Now get in there and do something like:'
+echo "UPDATE wp_users SET user_email = 'nobody6571@nowhere8256.com' WHERE user_email != 'ssteele@w2odigital.com';"
+
+echo ''
+
 exit
