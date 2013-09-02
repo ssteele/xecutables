@@ -17,8 +17,7 @@ while ( $input != "y" )
 end
 
 echo ''
-sed -i.bak 's,get_header();,get_header(); ?><div style="background-color:#ff0; height:50px"><?php echo __FILE__; ?></div><?php,' *$file*
 
-rm -fr *.bak
+perl -pi -e 's|get_header\(\);|get_header(); ?><div style="min-height:45px; padding:15px; font-size:15px; background-color:#ff0;"><?php echo __FILE__; ?></div><?php|g' *$file*
 
 exit
