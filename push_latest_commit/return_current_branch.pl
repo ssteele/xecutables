@@ -14,6 +14,10 @@ while ($line = <IN>) {
 
 close IN || die "Error closing IN: $!";
 
+if ($push_to_branch eq 'shs_current_shs') {
+	$push_to_branch = $current_branch;
+}
+
 system ("/bin/csh $xec/push_latest_commit/two_branch_monte.csh $current_branch $push_to_branch");
 
 exit;

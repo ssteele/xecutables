@@ -3,12 +3,17 @@
 # Collect user arguments
 if ($#argv != 1) then
 	echo ''
-	echo 'Please supply the branch to be pushed...'
-	echo ''
-	exit
+	echo -n 'Push to current branch? '
+	set read_input = "$<"
+	if ($read_input != 'y') then
+		echo '	...nothing pushed'
+		echo ''
+		exit
+	endif
+	set merge_branch = 'shs_current_shs'
+else
+	set merge_branch = $argv[1]
 endif
-
-set merge_branch = $argv[1]
 
 # Figure out current branch (for now, hardcode it)
 git status > 0_temp

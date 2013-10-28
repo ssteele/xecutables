@@ -6,12 +6,16 @@ set merge_branch = $argv[2]
 rm -fr 0_temp
 
 # Switch to branch that we're about to merge to
-git checkout $merge_branch
+if ($current_branch != $merge_branch) then
+	git checkout $merge_branch
+	git cherry-pick $current_branch
+endif
 
-git cherry-pick $current_branch
 git push
 
 # Switch back to original branch
-git checkout $current_branch
+if ($current_branch != $merge_branch) then
+	git checkout $current_branch
+endif
 
 exit
