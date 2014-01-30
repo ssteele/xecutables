@@ -1,7 +1,12 @@
 #!/bin/csh
 
-echo "Which project? ";
-set env = "$<"
+if ($#argv != 1) then
+    echo "Which project? "
+    set env = "$<"
+else
+    set env = $argv[1]
+endif
+
 set caps = `echo $env | tr "[a-z]" "[A-Z]"`
 
 cd ${ll}/assets_${env}
