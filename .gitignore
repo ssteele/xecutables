@@ -1,2 +1,5 @@
 config.pl
 highlight_wp_merco.csh
+filter_sql_subdomain.csh
+www.csh
+www.pl
