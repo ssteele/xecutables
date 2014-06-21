@@ -7,7 +7,7 @@ $pwd = $ARGV[2];
 open (IN,"<$pwd/0_temp") || die "Error opening IN: $!";
 
 while ($line = <IN>) {
-	if ($line =~ m/# On branch (.+)/) {
+	if ($line =~ m/On branch (.+)/) {
 		$current_branch = $1;
 	}
 }
