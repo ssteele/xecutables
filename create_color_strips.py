@@ -46,7 +46,7 @@ o = """<!doctype html>
 <style type="text/css">
 
 body {
-    background-color:#fff;
+    background:#fff url('img/white_carbon.png');
 }
 
 .colorbox {
