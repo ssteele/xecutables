@@ -15,14 +15,17 @@ set env = `echo $env | sed "s/[/]//g"`
 # extract the project name
 set proj = `echo $env | sed "s/_.*//"`
 
+# set vagrant
 cd ${code}/app_${env}
 setv
 
+# set root
 cd ${code}/${env}
 setr
 
 cd ${gr}/site
 
+# set plugins
 if (-d "wp-content" || -d "content") then
 
     cd ${gr}/site/*content*/plugins
@@ -36,23 +39,26 @@ else if (-d "assets") then
 endif
 
 cd ../themes
+sett
 
+# set parent theme
 if (-d "skeleton") then
 
     cd skeleton
-    sett
+    sethh
     cd ..
 
 else if (-d "*skeleton*") then
 
     cd *skeleton*
-    sett
+    sethh
     cd ..
 
 endif
 
 set found_home = "false"
 
+# set home
 if (-d $env) then
 
     set found_home = "true"
@@ -69,6 +75,7 @@ else
     echo 'Could not locate content directory';
 endif
 
+# set style
 if ("true" == $found_home) then
 
     cd _
@@ -85,8 +92,26 @@ if ("true" == $found_home) then
 
     endif
 
-    gh
+endif
 
+# set assets
+if (-d "/Users/steele/projects/assets/${env}") then
+
+    cd /Users/steele/projects/assets/${env}
+    set year = `date "+%Y"`
+
+    if (-d $year) then
+        cd $year
+    endif
+
+    seta
+
+endif
+
+if ("true" == $found_home) then
+    gh
+else
+    gt
 endif
 
 exit

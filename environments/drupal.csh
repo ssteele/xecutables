@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/bin/tcsh
 
 echo "Which project? ";
 set env = "$<"
