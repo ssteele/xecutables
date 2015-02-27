@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-require '/global/xecutables/config.pl';
+# require 'config.pl';
 
 $left = $ARGV[0];
 $right = $ARGV[1];

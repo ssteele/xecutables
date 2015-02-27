@@ -3,11 +3,11 @@
 cmd=''
 
 if [[ -z "$1" ]]; then
-	cmd='pwd'
+    cmd='pwd'
 else
-	for arg in "$@"; do
-		cmd="$cmd $arg"
-	done
+    for arg in "$@"; do
+        cmd="$cmd $arg"
+    done
 fi
 
 $cmd | pbcopy
