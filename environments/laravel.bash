@@ -21,15 +21,19 @@ setr
 
 # set routes
 cd ${gr}/app/Http/
-sett
+seth
 
-# set controllers
-cd ${gt}/Controllers/
-sets
+# set models
+cd ${gr}/app/
+setm
 
 # set views
 cd ${gr}/resources/views/
 setv
+
+# set controllers
+cd ${gh}/Controllers/
+setc
 
 # set style
 cd ${gr}/public/css/

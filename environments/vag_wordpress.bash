@@ -15,8 +15,12 @@ env=`echo $env | sed 's/[/]//g'`
 # extract the project name
 proj=`echo $env | sed 's/_.*//'`
 
+# set vagrant
+cd ${code}/app_${env}
+setv
+
 # set root
-cd ${ll}/${env}
+cd ${code}/${env}
 setr
 
 cd ${gr}/site
