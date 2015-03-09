@@ -39,4 +39,4 @@ setc
 cd ${gr}/public/css/
 sets
 
-gv
+gr
