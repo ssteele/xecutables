@@ -35,8 +35,20 @@ setv
 cd ${gh}/Controllers/
 setc
 
+# set js
+cd ${gr}/public/js
+setj
+
 # set style
-cd ${gr}/public/css/
+cd ${gr}/resources/assets/less
 sets
+
+# set compiled style
+cd ${gr}/public/css/
+setss
+
+# set vagrant
+cd ~/Homestead
+setvv
 
 gr
