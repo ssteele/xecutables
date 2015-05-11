@@ -36,8 +36,12 @@ cd ${gh}/Controllers/
 setc
 
 # set js
-cd ${gr}/public/js
+cd ${gr}/resources/js
 setj
+
+# set compiled js
+cd ${gr}/public/js
+setjj
 
 # set style
 cd ${gr}/resources/assets/less
@@ -46,6 +50,10 @@ sets
 # set compiled style
 cd ${gr}/public/css/
 setss
+
+# set compiled style
+cd ${ll}/assets/${env}/
+seta
 
 # set vagrant
 cd ~/Homestead
