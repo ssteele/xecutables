@@ -55,6 +55,10 @@ setss
 cd ${ll}/assets/${env}/
 seta
 
+# set public
+cd ${gr}/public/
+setp
+
 # set vagrant
 cd ~/Homestead
 setvv
