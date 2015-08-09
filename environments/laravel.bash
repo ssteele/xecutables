@@ -52,7 +52,7 @@ cd ${gr}/public/css/
 setss
 
 # set compiled style
-cd ${ll}/assets/${env}/
+cd ${home}/assets/${env}/
 seta
 
 # set public
