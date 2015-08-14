@@ -47,9 +47,13 @@ setj
 cd ${gr}/tests/
 sett
 
+# set tests
+cd ${gr}/db/alters
+setd
+
 # set documentation
 cd ~/work/documentation/
-setd
+setdd
 
 # set assets
 cd ~/work/assets/phoenix_beta/2015/

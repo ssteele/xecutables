@@ -3,12 +3,12 @@
 
 # environment vars (~/ssteele/bin/subl employed below)
 dir='backlog-grooming'
-tpl='0_template.txt'
+tpl='1_boilerplate.txt'
 ext='.txt'
 
 
 # execution
-cd $gd/$dir
+cd $gdd/$dir
 
 if [[ -n "$1" ]]; then
     issue="$1"
