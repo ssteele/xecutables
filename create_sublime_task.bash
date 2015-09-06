@@ -9,7 +9,7 @@ fi
 
 cd ~/sublime_projects_tasks
 
-cp boilerplate.sublime-project "${task_id}.sublime-project"
-cp boilerplate.sublime-workspace "${task_id}.sublime-workspace"
+cp 1_boilerplate.sublime-project "${task_id}.sublime-project"
+cp 1_boilerplate.sublime-workspace "${task_id}.sublime-workspace"
 
 exit
