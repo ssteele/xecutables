@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # custom site (hardcoded)
-env='phoenix_beta'
+env="$work/sites/phoenix_beta"
 
 # set root
 cd ${env}

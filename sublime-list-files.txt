@@ -1,0 +1,2 @@
+print("\n".join([view.file_name() for view in sublime.active_window().views() if view and view.file_name()]));
+[paste this into sublime console]
