@@ -16,7 +16,7 @@ env=`echo $env | sed 's/[/]//g'`
 proj=`echo $env | sed 's/_.*//'`
 
 # set root
-cd ${ll}/${env}
+cd ${lll}/sites/${env}
 setr
 
 cd ${gr}/site
@@ -91,9 +91,9 @@ if $found_home; then
 fi
 
 # set assets
-if [ -d "/Users/steele/projects/assets/${env}" ]; then
+if [ -d "${lll}/assets/${env}" ]; then
 
-    cd /Users/steele/projects/assets/${env}
+    cd ${lll}/assets/${env}
     year=`date "+%Y"`
 
     if [ -d $year ]; then
