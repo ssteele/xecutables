@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# environment
+root='sites'
+# root='public'
+
 if [[ -z "$1" ]]; then
 
     echo 'Which project? '
@@ -16,7 +20,7 @@ env=`echo $env | sed 's/[/]//g'`
 proj=`echo $env | sed 's/_.*//'`
 
 # set root
-cd ${lll}/sites/${env}
+cd ${lll}/$root/${env}
 setr
 
 cd ${gr}/site
