@@ -60,8 +60,12 @@ cd ~/work/documentation/
 setdd
 
 # set assets
-cd ~/work/assets/phoenix_beta/2015/
-setaa
+cd ~/work/assets/phoenix_beta/2016/
+setz
+
+# set nginx (vagrant)
+cd /vagrant/phoenix_beta/
+setn
 
 # set current
 cd ~/Desktop/current/
