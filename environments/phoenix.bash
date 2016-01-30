@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # custom site (hardcoded)
-env="$work/sites/phoenix_beta"
+env="${worksites}/phoenix_beta"
 
 # set root
 cd ${env}
@@ -57,18 +57,18 @@ setd
 
 # set documentation
 cd ~/work/documentation/
-setdd
+setD
 
 # set assets
 cd ~/work/assets/phoenix_beta/2016/
-setz
+setA
 
 # set nginx (vagrant)
-cd /vagrant/phoenix_beta/
-setn
+cd /vagrant/
+setV
 
 # set current
 cd ~/Desktop/current/
-setcc
+setC
 
 gr

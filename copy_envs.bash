@@ -6,12 +6,20 @@ if [ -n "$ga" ]; then
     echo 'cd '$ga'; seta'
 fi
 
+if [ -n "$gA" ]; then
+    echo 'cd '$gA'; setA'
+fi
+
 if [ -n "$gaa" ]; then
     echo 'cd '$gaa'; setaa'
 fi
 
 if [ -n "$gb" ]; then
     echo 'cd '$gb'; setb'
+fi
+
+if [ -n "$gB" ]; then
+    echo 'cd '$gB'; setB'
 fi
 
 if [ -n "$gbb" ]; then
@@ -22,12 +30,20 @@ if [ -n "$gc" ]; then
     echo 'cd '$gc'; setc'
 fi
 
+if [ -n "$gC" ]; then
+    echo 'cd '$gC'; setC'
+fi
+
 if [ -n "$gcc" ]; then
     echo 'cd '$gcc'; setcc'
 fi
 
 if [ -n "$gd" ]; then
     echo 'cd '$gd'; setd'
+fi
+
+if [ -n "$gD" ]; then
+    echo 'cd '$gD'; setD'
 fi
 
 if [ -n "$gdd" ]; then
@@ -38,12 +54,20 @@ if [ -n "$ge" ]; then
     echo 'cd '$ge'; sete'
 fi
 
+if [ -n "$gE" ]; then
+    echo 'cd '$gE'; setE'
+fi
+
 if [ -n "$gee" ]; then
     echo 'cd '$gee'; setee'
 fi
 
 if [ -n "$gf" ]; then
     echo 'cd '$gf'; setf'
+fi
+
+if [ -n "$gF" ]; then
+    echo 'cd '$gF'; setF'
 fi
 
 if [ -n "$gff" ]; then
@@ -54,12 +78,20 @@ if [ -n "$gg" ]; then
     echo 'cd '$gg'; setg'
 fi
 
+if [ -n "$gG" ]; then
+    echo 'cd '$gG'; setG'
+fi
+
 if [ -n "$ggg" ]; then
     echo 'cd '$ggg'; setgg'
 fi
 
 if [ -n "$gh" ]; then
     echo 'cd '$gh'; seth'
+fi
+
+if [ -n "$gH" ]; then
+    echo 'cd '$gH'; setH'
 fi
 
 if [ -n "$ghh" ]; then
@@ -70,12 +102,20 @@ if [ -n "$gi" ]; then
     echo 'cd '$gi'; seti'
 fi
 
+if [ -n "$gI" ]; then
+    echo 'cd '$gI'; setI'
+fi
+
 if [ -n "$gii" ]; then
     echo 'cd '$gii'; setii'
 fi
 
 if [ -n "$gj" ]; then
     echo 'cd '$gj'; setj'
+fi
+
+if [ -n "$gJ" ]; then
+    echo 'cd '$gJ'; setJ'
 fi
 
 if [ -n "$gjj" ]; then
@@ -86,12 +126,20 @@ if [ -n "$gk" ]; then
     echo 'cd '$gk'; setk'
 fi
 
+if [ -n "$gK" ]; then
+    echo 'cd '$gK'; setK'
+fi
+
 if [ -n "$gkk" ]; then
     echo 'cd '$gkk'; setkk'
 fi
 
 if [ -n "$gl" ]; then
     echo 'cd '$gl'; setl'
+fi
+
+if [ -n "$gL" ]; then
+    echo 'cd '$gL'; setL'
 fi
 
 if [ -n "$gll" ]; then
@@ -102,12 +150,20 @@ if [ -n "$gm" ]; then
     echo 'cd '$gm'; setm'
 fi
 
+if [ -n "$gM" ]; then
+    echo 'cd '$gM'; setM'
+fi
+
 if [ -n "$gmm" ]; then
     echo 'cd '$gmm'; setmm'
 fi
 
 if [ -n "$gn" ]; then
     echo 'cd '$gn'; setn'
+fi
+
+if [ -n "$gN" ]; then
+    echo 'cd '$gN'; setN'
 fi
 
 if [ -n "$gnn" ]; then
@@ -118,12 +174,20 @@ if [ -n "$go" ]; then
     echo 'cd '$go'; seto'
 fi
 
+if [ -n "$gO" ]; then
+    echo 'cd '$gO'; setO'
+fi
+
 if [ -n "$goo" ]; then
     echo 'cd '$goo'; setoo'
 fi
 
 if [ -n "$gp" ]; then
     echo 'cd '$gp'; setp'
+fi
+
+if [ -n "$gP" ]; then
+    echo 'cd '$gP'; setP'
 fi
 
 if [ -n "$gpp" ]; then
@@ -134,12 +198,20 @@ if [ -n "$gq" ]; then
     echo 'cd '$gq'; setq'
 fi
 
+if [ -n "$gQ" ]; then
+    echo 'cd '$gQ'; setQ'
+fi
+
 if [ -n "$gqq" ]; then
     echo 'cd '$gqq'; setqq'
 fi
 
 if [ -n "$gr" ]; then
     echo 'cd '$gr'; setr'
+fi
+
+if [ -n "$gR" ]; then
+    echo 'cd '$gR'; setR'
 fi
 
 if [ -n "$grr" ]; then
@@ -150,12 +222,20 @@ if [ -n "$gs" ]; then
     echo 'cd '$gs'; sets'
 fi
 
+if [ -n "$gS" ]; then
+    echo 'cd '$gS'; setS'
+fi
+
 if [ -n "$gss" ]; then
     echo 'cd '$gss'; setss'
 fi
 
 if [ -n "$gt" ]; then
     echo 'cd '$gt'; sett'
+fi
+
+if [ -n "$gT" ]; then
+    echo 'cd '$gT'; setT'
 fi
 
 if [ -n "$gtt" ]; then
@@ -166,12 +246,20 @@ if [ -n "$gu" ]; then
     echo 'cd '$gu'; setu'
 fi
 
+if [ -n "$gU" ]; then
+    echo 'cd '$gU'; setU'
+fi
+
 if [ -n "$guu" ]; then
     echo 'cd '$guu'; setuu'
 fi
 
 if [ -n "$gv" ]; then
     echo 'cd '$gv'; setv'
+fi
+
+if [ -n "$gV" ]; then
+    echo 'cd '$gV'; setV'
 fi
 
 if [ -n "$gvv" ]; then
@@ -182,12 +270,20 @@ if [ -n "$gw" ]; then
     echo 'cd '$gw'; setw'
 fi
 
+if [ -n "$gW" ]; then
+    echo 'cd '$gW'; setW'
+fi
+
 if [ -n "$gww" ]; then
     echo 'cd '$gww'; setww'
 fi
 
 if [ -n "$gx" ]; then
     echo 'cd '$gx'; setx'
+fi
+
+if [ -n "$gX" ]; then
+    echo 'cd '$gX'; setX'
 fi
 
 if [ -n "$gxx" ]; then
@@ -198,12 +294,20 @@ if [ -n "$gy" ]; then
     echo 'cd '$gy'; sety'
 fi
 
+if [ -n "$gY" ]; then
+    echo 'cd '$gY'; setY'
+fi
+
 if [ -n "$gyy" ]; then
     echo 'cd '$gyy'; setyy'
 fi
 
 if [ -n "$gz" ]; then
     echo 'cd '$gz'; setz'
+fi
+
+if [ -n "$gZ" ]; then
+    echo 'cd '$gZ'; setZ'
 fi
 
 if [ -n "$gzz" ]; then
