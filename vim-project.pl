@@ -2,7 +2,6 @@
 
 
 # environment
-$home_path = '~/ssteele';
 $projects_path = '~/vim_projects';
 
 
