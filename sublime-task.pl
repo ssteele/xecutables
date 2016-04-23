@@ -3,7 +3,7 @@
 
 # environment
 $home_path = '~/ssteele';
-$projects_path = '~/sublime_projects_tasks';
+$tasks_path = '~/sublime_projects_tasks';
 
 
 # execution
@@ -18,7 +18,7 @@ chomp($is_current_branch);
 print "\n";
 
 if ('y' eq $is_current_branch || 'Y' eq $is_current_branch) {
-    system("${command} -n ${projects_path}/${task}.sublime-project");
+    system("${command} -n ${tasks_path}/${task}.sublime-project");
 }
 
 exit;

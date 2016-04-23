@@ -28,7 +28,7 @@ cd ${gf}/Model/
 setm
 
 # set viewmodels
-cd ${gr}/application/libraries/Fg/ViewModel/
+cd ${gf}/ViewModel/
 setvv
 
 # set views

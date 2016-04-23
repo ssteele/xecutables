@@ -16,6 +16,12 @@ fi
 # copy assets boilerplate
 cd ${assets}/${year}
 mkdir ${task_id}
-cp -r 0_template/* ${task_id}
+cp -r ../task-template/* ${task_id}
+
+if echo "$EDITOR" | grep -q 'vim'; then
+    $xec/create_vim_task.bash ${task_id}
+elif echo "$EDITOR" | grep -q 'subl'; then
+    $xec/create_sublime_task.bash ${task_id}
+fi
 
 exit
