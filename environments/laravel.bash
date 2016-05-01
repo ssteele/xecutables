@@ -1,5 +1,32 @@
 #!/bin/bash
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     VERIFY ENVIRONMENT
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+source ${xec}/verify-bash-variables.bash
+
+# validate all variables
+verify_bash_exports home
+bash_exports_valid=$?
+
+# validate all aliases
+verify_bash_aliases
+bash_aliases_valid=$?
+
+if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
+    exit
+fi
+
+shopt -s expand_aliases
+source ~/.bashrc
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     SET LARAVEL ENVIRONMENT
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 if [[ -z "$1" ]]; then
 
     echo 'Which project? '
@@ -10,10 +37,10 @@ else
 fi
 
 # remove all slashes
-env=`echo $env | sed 's/[/]//g'`
+env=`echo ${env} | sed 's/[/]//g'`
 
 # extract the project name
-proj=`echo $env | sed 's/_.*//'`
+proj=`echo ${env} | sed 's/_.*//'`
 
 # set root
 cd ${env}

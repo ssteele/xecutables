@@ -35,3 +35,5 @@ for i in lines:
         fo.writelines([i, "\n"])
 
     prev_line = i
+
+print('\n    Alphabetized and written to .temp\n')

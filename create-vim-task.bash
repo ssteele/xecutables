@@ -8,11 +8,11 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports
+verify_bash_exports phoenix_assets_path
 bash_exports_valid=$?
 
 # validate all aliases
-verify_bash_aliases
+verify_bash_aliases vv
 bash_aliases_valid=$?
 
 if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
@@ -24,19 +24,18 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     COPY PRESENT WORKING DIRECTORY
+#     CREATE VIM TASK
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-cmd=''
 
-if [[ -z "$1" ]]; then
-    cmd='pwd'
+# get task id
+if [[ -n "$1" ]]; then
+    task_id="$1"
 else
-    for arg in "$@"; do
-        cmd="${cmd} ${arg}"
-    done
+    echo 'No task ID passed in by create_task.bash'
+    exit
 fi
 
-${cmd} | pbcopy
+vv ${task_id}/0_notes.txt
 
 exit

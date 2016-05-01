@@ -2,7 +2,7 @@
 
 
 # environment
-$projects_path = '~/vim_projects';
+$projects_path = '${editor_path}/vim_projects';
 
 
 # execution

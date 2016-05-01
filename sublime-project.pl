@@ -2,8 +2,8 @@
 
 
 # environment
-$home_path = '~/ssteele';
-$projects_path = '~/sublime_projects';
+$home_path = '${ss}';
+$projects_path = '${editor_path}/sublime_projects';
 
 
 # execution

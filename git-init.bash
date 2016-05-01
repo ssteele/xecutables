@@ -24,19 +24,10 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     COPY PRESENT WORKING DIRECTORY
+#     GIT INIT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-cmd=''
+git init
+git add .
+git commit -m 'Initial commit'
 
-if [[ -z "$1" ]]; then
-    cmd='pwd'
-else
-    for arg in "$@"; do
-        cmd="${cmd} ${arg}"
-    done
-fi
-
-${cmd} | pbcopy
-
-exit

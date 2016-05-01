@@ -24,19 +24,25 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     COPY PRESENT WORKING DIRECTORY
+#     FUN TIME COMPUTER VOICE
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-cmd=''
-
 if [[ -z "$1" ]]; then
-    cmd='pwd'
+
+    echo ''
+    echo 'USAGE::'
+    echo ''
+    echo '    vox "$msg" $voice [agnes, kathy, princess, vicki, victoria, bruce, fred, junior, ralph, albert, bahh, bells, boing, bubbles, cellos, deranged, hysterical, trinoids, whisper, zarvox]'
+    echo ''
+    exit
+
 else
-    for arg in "$@"; do
-        cmd="${cmd} ${arg}"
-    done
+    msg="$1"
 fi
 
-${cmd} | pbcopy
+if [[ -n "$2" ]]; then
+    voice="$2"
+fi
 
-exit
+say -v "${voice}" "${msg}"
+

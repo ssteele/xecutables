@@ -24,19 +24,21 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     COPY PRESENT WORKING DIRECTORY
+#     CUSTOM WHICH COMMAND
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-cmd=''
-
-if [[ -z "$1" ]]; then
-    cmd='pwd'
+if [[ -n "$1" ]]; then
+    input="$1"
 else
-    for arg in "$@"; do
-        cmd="${cmd} ${arg}"
-    done
+    echo -n "Command: "
+    read input
 fi
 
-${cmd} | pbcopy
+echo ''
 
-exit
+grep ${input} ~/.bashrc
+grep -r ${input} ~/bash
+echo ''
+
+alias ${input}
+echo ''

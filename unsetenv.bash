@@ -1,4 +1,31 @@
-#!/bin/tcsh
+#!/bin/bash
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     VERIFY ENVIRONMENT
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+source ${xec}/verify-bash-variables.bash
+
+# validate all variables
+verify_bash_exports
+bash_exports_valid=$?
+
+# validate all aliases
+verify_bash_aliases
+bash_aliases_valid=$?
+
+if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
+    exit
+fi
+
+shopt -s expand_aliases
+source ~/.bashrc
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     UNSET SHELL NAVIGATION VARIABLES
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if [[ -n "$1" ]]; then
 
@@ -16,13 +43,13 @@ for env in "${envs[@]}"; do
 
     if [ -n "${!env}" ]; then
 
-        unalias $env
-        unset $env
+        unalias ${env}
+        unset ${env}
 
     fi
 
 done
 
-echo ""
-echo $msg
-echo ""
+echo ''
+echo ${msg}
+echo ''

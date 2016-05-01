@@ -1,5 +1,32 @@
 #!/bin/bash
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     VERIFY ENVIRONMENT
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+source ${xec}/verify-bash-variables.bash
+
+# validate all variables
+verify_bash_exports lll
+bash_exports_valid=$?
+
+# validate all aliases
+verify_bash_aliases
+bash_aliases_valid=$?
+
+if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
+    exit
+fi
+
+shopt -s expand_aliases
+source ~/.bashrc
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     SET LARAVEL ENVIRONMENT
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # environment
 root='sites'
 # root='public'
@@ -14,13 +41,13 @@ else
 fi
 
 # remove all slashes
-env=`echo $env | sed 's/[/]//g'`
+env=`echo ${env} | sed 's/[/]//g'`
 
 # extract the project name
-proj=`echo $env | sed 's/_.*//'`
+proj=`echo ${env} | sed 's/_.*//'`
 
 # set root
-cd ${lll}/$root/${env}
+cd ${lll}/${root}/${env}
 setr
 
 cd ${gr}/site
@@ -59,16 +86,16 @@ fi
 found_home=false
 
 # set home
-if [ -d $env ]; then
+if [ -d ${env} ]; then
 
     found_home=true
-    cd $env
+    cd ${env}
     seth
 
-elif [ -d $proj ]; then
+elif [ -d ${proj} ]; then
 
     found_home=true
-    cd $proj
+    cd ${proj}
     seth
 
 else
@@ -76,7 +103,7 @@ else
 fi
 
 # set style
-if $found_home; then
+if ${found_home}; then
 
     cd _
 
@@ -101,14 +128,14 @@ if [ -d "${lll}/assets/${env}" ]; then
     year=`date "+%Y"`
 
     if [ -d $year ]; then
-        cd $year
+        cd ${year}
     fi
 
     seta
 
 fi
 
-if $found_home; then
+if ${found_home}; then
     gh
 else
     gt
