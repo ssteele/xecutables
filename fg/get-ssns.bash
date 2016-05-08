@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tail $gD/data/ssns.txt
-./get-ssn.bash
+tail ${gD}/data/ssns.txt
+${xec}/fg/get-ssn.bash
 
 exit

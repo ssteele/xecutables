@@ -95,7 +95,7 @@ cd ${work}/sites/vagrant/development/
 setV
 
 # set current
-cd ${dt}/current/
+cd ${dt}/desk/current/
 setC
 
 gr
