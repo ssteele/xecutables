@@ -62,8 +62,12 @@ setv
 cd ${gh}/Controllers/
 setc
 
+# set db alters
+cd ${gr}/database/migrations/
+setd
+
 # set js
-cd ${gr}/resources/js
+cd ${gr}/resources/assets/js
 setj
 
 # set compiled js
@@ -71,7 +75,7 @@ cd ${gr}/public/js
 setjj
 
 # set style
-cd ${gr}/resources/assets/less
+cd ${gr}/resources/assets/sass
 sets
 
 # set compiled style
@@ -85,9 +89,5 @@ seta
 # set public
 cd ${gr}/public/
 setp
-
-# set vagrant
-cd ~/Homestead
-setvv
 
 gr

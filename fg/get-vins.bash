@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tail ${gD}/data/vins.txt
+tail ${gd}/data/vins.txt
 ${xec}/fg/get-vin.bash
 
 exit

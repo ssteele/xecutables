@@ -66,9 +66,9 @@ setv
 cd ${gf}/Service
 sets
 
-# set attributes
-cd ${gf}/Ade/Attribute
-seta
+# # set attributes
+# cd ${gf}/Ade/Attribute
+# seta
 
 # set js
 cd ${gr}/assets/js
@@ -78,17 +78,21 @@ setj
 cd ${gr}/tests/
 sett
 
-# set db alters
-cd ${gr}/db/alters
-setd
+# set proxies
+cd ${gr}/application/models/Proxies/
+setp
+
+# # set db alters
+# cd ${gr}/db/alters
+# setd
 
 # set documentation
-cd ${work}/documentation/
-setD
+cd ${work}/documentation/phoenix_beta/
+setd
 
 # set assets
 cd ${work}/assets/phoenix_beta/2016/
-setA
+seta
 
 # set vagrant
 cd ${work}/sites/vagrant/development/
