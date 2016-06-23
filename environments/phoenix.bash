@@ -35,31 +35,31 @@ cd ${env}
 setr
 
 # set FG
-cd ${gr}/application/libraries/Fg/
+cd ${gr}/application/libraries/Fg
 setf
 
 # set routes
-cd ${gr}/application/config/
+cd ${gr}/application/config
 setrr
 
 # set controllers
-cd ${gr}/application/controllers/
+cd ${gr}/application/controllers
 setc
 
 # set entities
-cd ${gf}/Entity/
+cd ${gf}/Entity
 sete
 
 # set models
-cd ${gf}/Model/
+cd ${gf}/Model
 setm
 
 # set viewmodels
-cd ${gf}/ViewModel/
+cd ${gf}/ViewModel
 setvv
 
 # set views
-cd ${gr}/application/views/
+cd ${gr}/application/views
 setv
 
 # set services
@@ -71,15 +71,15 @@ sets
 # seta
 
 # set js
-cd ${gr}/assets/js
+cd ${gr}/assets/js/Fg
 setj
 
 # set tests
-cd ${gr}/tests/
+cd ${gr}/tests
 sett
 
 # set proxies
-cd ${gr}/application/models/Proxies/
+cd ${gr}/application/models/Proxies
 setp
 
 # # set db alters
@@ -87,19 +87,19 @@ setp
 # setd
 
 # set documentation
-cd ${work}/documentation/phoenix_beta/
+cd ${work}/documentation/phoenix_beta
 setd
 
 # set assets
-cd ${work}/assets/phoenix_beta/2016/
+cd ${work}/assets/phoenix_beta/2016
 seta
 
 # set vagrant
-cd ${work}/sites/vagrant/development/
+cd ${work}/sites/vagrant/development
 setV
 
 # set current
-cd ${dt}/desk/current/
+cd ${dt}/desk/current
 setC
 
 gr
