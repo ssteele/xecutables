@@ -16,7 +16,7 @@ verify_bash_aliases
 bash_aliases_valid=$?
 
 if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
-    exit
+    return
 fi
 
 shopt -s expand_aliases
@@ -70,24 +70,24 @@ setd
 cd ${gr}/resources/assets/js
 setj
 
-# set compiled js
-cd ${gr}/public/js
-setjj
-
 # set style
 cd ${gr}/resources/assets/sass
 sets
 
-# set compiled style
-cd ${gr}/public/css/
-setss
-
-# set compiled style
-cd ${home}/assets/${env}/
-seta
-
 # set public
 cd ${gr}/public/
 setp
+
+# set compiled js
+cd ${gp}/js
+setjj
+
+# set compiled style
+cd ${gp}/css/
+setss
+
+# set assets
+cd ${home}/assets/${env}/
+seta
 
 gr

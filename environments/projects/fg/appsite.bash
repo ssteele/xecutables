@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports phoenix_path work dt
+verify_bash_exports appsite_path appsite_assets_path work
 bash_exports_valid=$?
 
 # validate all aliases
@@ -16,7 +16,7 @@ verify_bash_aliases
 bash_aliases_valid=$?
 
 if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
-    exit
+    return
 fi
 
 shopt -s expand_aliases
@@ -24,82 +24,64 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     SET FG PHOENIX ENVIRONMENT
+#     SET FG APPSITE ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # custom site
-env=${phoenix_path}
+env=${appsite_path}
 
 # set root
 cd ${env}
 setr
 
-# set FG
-cd ${gr}/application/libraries/Fg
-setf
-
-# set routes
-cd ${gr}/application/config
-setrr
-
-# set controllers
-cd ${gr}/application/controllers
-setc
-
-# set entities
-cd ${gf}/Entity
-sete
+# set app (home)
+cd ${gr}/app
+seth
 
 # set models
-cd ${gf}/Model
+cd ${gh}/models
 setm
 
-# set viewmodels
-cd ${gf}/ViewModel
-setvv
-
 # set views
-cd ${gr}/application/views
+cd ${gh}/views
 setv
 
-# set services
-cd ${gf}/Service
-sets
+# set controllers
+cd ${gh}/controllers
+setc
 
-# # set attributes
-# cd ${gf}/Ade/Attribute
-# seta
-
-# set js
-cd ${gr}/assets/js/Fg
-setj
-
-# set tests
-cd ${gr}/tests
-sett
-
-# set proxies
-cd ${gr}/application/models/Proxies
-setp
-
-# # set db alters
-# cd ${gr}/db/alters
-# setd
-
-# set documentation
-cd ${work}/documentation/phoenix_beta
+# set db alters
+cd ${gh}/database/migrations/
 setd
 
+# set public
+cd ${gr}/public/
+setp
+
+# set compiled js
+cd ${gp}/packages/js
+setj
+setjj
+
+# set style
+cd ${gp}/packages/css
+sets
+setss
+
+# set tests
+cd ${gh}/tests
+sett
+
 # set assets
-cd ${work}/assets/phoenix_beta/2016
+cd ${appsite_assets_path}/2016
 seta
+
+# set documentation
+cd ${work}/documentation/appsite
+setd
 
 # set vagrant
 cd ${work}/sites/vagrant/development
 setV
-
-# set current
-cd ${dt}/desk/current
-setC
 
 gr

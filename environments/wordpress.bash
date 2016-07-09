@@ -16,7 +16,7 @@ verify_bash_aliases
 bash_aliases_valid=$?
 
 if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
-    exit
+    return
 fi
 
 shopt -s expand_aliases
