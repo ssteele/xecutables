@@ -71,7 +71,7 @@ sets
 # seta
 
 # set js
-cd ${gr}/assets/js/Fg
+cd ${gr}/assets/js/fg
 setj
 
 # set tests

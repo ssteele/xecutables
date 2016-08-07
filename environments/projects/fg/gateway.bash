@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports gateway_path gateway_assets_path work
+verify_bash_exports gateway_path phoenix_assets_path work
 bash_exports_valid=$?
 
 # validate all aliases
@@ -39,7 +39,7 @@ cd ${gr}/tests
 sett
 
 # set assets
-cd ${gateway_assets_path}/2016
+cd ${phoenix_assets_path}/2016
 seta
 
 # set documentation

@@ -47,23 +47,23 @@ cd ${env}
 setr
 
 # set routes
-cd ${gr}/app/Http/
+cd ${gr}/app/Http
 seth
 
 # set models
-cd ${gr}/app/
+cd ${gr}/app
 setm
 
 # set views
-cd ${gr}/resources/views/
+cd ${gr}/resources/views
 setv
 
 # set controllers
-cd ${gh}/Controllers/
+cd ${gh}/Controllers
 setc
 
 # set db alters
-cd ${gr}/database/migrations/
+cd ${gr}/database/migrations
 setd
 
 # set js
@@ -75,7 +75,7 @@ cd ${gr}/resources/assets/sass
 sets
 
 # set public
-cd ${gr}/public/
+cd ${gr}/public
 setp
 
 # set compiled js
@@ -83,11 +83,16 @@ cd ${gp}/js
 setjj
 
 # set compiled style
-cd ${gp}/css/
+cd ${gp}/css
 setss
 
+# set laravel source
+cd ${gr}/vendor/laravel/framework/src/Illuminate
+setl
+seti
+
 # set assets
-cd ${home}/assets/${env}/
+cd ${home}/assets/${env}
 seta
 
 gr
