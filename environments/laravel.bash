@@ -48,7 +48,7 @@ setr
 
 # set routes
 cd ${gr}/app/Http
-seth
+seto
 
 # set models
 cd ${gr}/app
