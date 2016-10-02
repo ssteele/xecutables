@@ -40,11 +40,11 @@ sett
 
 # set assets
 cd ${phoenix_assets_path}/2016
-seta
+setA
 
 # set documentation
 cd ${work}/documentation/gateway
-setd
+setD
 
 # set vagrant
 cd ${work}/sites/vagrant/development

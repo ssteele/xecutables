@@ -82,17 +82,17 @@ sett
 cd ${gr}/application/models/Proxies
 setp
 
-# # set db alters
-# cd ${gr}/db/alters
-# setd
-
-# set documentation
-cd ${work}/documentation/phoenix_beta
+# set db alters
+cd ${gr}/db/alters
 setd
 
 # set assets
 cd ${phoenix_assets_path}/2016
-seta
+setA
+
+# set documentation
+cd ${work}/documentation/phoenix_beta
+setD
 
 # set vagrant
 cd ${work}/sites/vagrant/development

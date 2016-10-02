@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports appsite_path phoenix_assets_path work
+verify_bash_exports home
 bash_exports_valid=$?
 
 # validate all aliases
@@ -24,52 +24,70 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     SET FG APPSITE ENVIRONMENT
+#     SET LARAVEL ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# custom site
-env=${appsite_path}
+if [[ -z "$1" ]]; then
+
+    echo 'Which project? '
+    read env
+
+else
+    env="$1"
+fi
+
+# remove all slashes
+env=`echo ${env} | sed 's/[/]//g'`
+
+# extract the project name
+proj=`echo ${env} | sed 's/_.*//'`
 
 # set root
 cd ${env}
 setr
 
 # set routes
-cd ${gr}/app
+cd ${gr}/app/Http
 seto
 
 # set models
-cd ${go}/models
+cd ${gr}/app
 setm
 
 # set views
-cd ${go}/views
+cd ${gr}/resources/views
 setv
 
 # set controllers
-cd ${go}/controllers
+cd ${go}/Controllers
 setc
 
 # set db alters
-cd ${go}/database/migrations
+cd ${gr}/database/migrations
 setd
 
 # set public
 cd ${gr}/public
 setp
 
-# set compiled js
-cd ${gp}/packages/js
+# set js
+cd ${gr}/resources/assets/js
 setj
-setjj
 
 # set style
-cd ${gp}/packages/css
+cd ${gr}/resources/assets/sass
 sets
+
+# set compiled js
+cd ${gp}/js
+setjj
+
+# set compiled style
+cd ${gp}/css
 setss
 
 # set tests
-cd ${go}/tests
+cd ${gr}/tests
 sett
 
 # set laravel source
@@ -77,15 +95,7 @@ cd ${gr}/vendor/laravel/framework/src/Illuminate
 setl
 
 # set assets
-cd ${phoenix_assets_path}/2016
+cd ${home}/assets/${env}
 setA
-
-# set documentation
-cd ${work}/documentation/appsite
-setD
-
-# set vagrant
-cd ${work}/sites/vagrant/development
-setV
 
 gr

@@ -29,6 +29,6 @@ setpp
 
 # set assets
 cd ~/work/assets/phoenix_beta/2015/setup/
-seta
+setA
 
 gr

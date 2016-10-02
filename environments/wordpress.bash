@@ -24,7 +24,7 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     SET LARAVEL ENVIRONMENT
+#     SET WORDPRESS ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # environment
@@ -131,7 +131,7 @@ if [ -d "${lll}/assets/${env}" ]; then
         cd ${year}
     fi
 
-    seta
+    setA
 
 fi
 
