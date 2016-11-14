@@ -86,6 +86,10 @@ setp
 cd ${gr}/db/alters
 setd
 
+# set logs
+cd ${gr}/application/logs
+setl
+
 # set assets
 cd ${phoenix_assets_path}/2016
 setA
