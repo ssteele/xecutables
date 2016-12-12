@@ -46,8 +46,8 @@ setA
 cd ${work}/documentation/gateway
 setD
 
-# set vagrant
-cd ${work}/sites/vagrant/development
+# set docker
+cd ~/dev_docker
 setV
 
 gr

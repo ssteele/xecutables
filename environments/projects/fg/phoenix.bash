@@ -38,7 +38,7 @@ setr
 cd ${gr}/application/libraries/Fg
 setf
 
-# set routes
+# set config
 cd ${gr}/application/config
 setrr
 
@@ -98,8 +98,8 @@ setA
 cd ${work}/documentation/phoenix_beta
 setD
 
-# set vagrant
-cd ${work}/sites/vagrant/development
+# set docker
+cd ~/dev_docker
 setV
 
 # set current
