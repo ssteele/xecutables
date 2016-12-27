@@ -4,12 +4,12 @@
 # environment
 $home_path = '${ss}';
 $tasks_path = '${editor_path}/sublime_projects_tasks';
+$command = "${home_path}/bin/subl";
 
 
 # execution
 die "\nThis program requires command-line input\n\n" if (!$ARGV[0]);
 chomp($task = $ARGV[0]);
-$command = "${home_path}/bin/subl";
 
 # sublime text drops files if they no longer exist, so have to check branch
 print "\n    Is ${task} branch currently checked out?    ";

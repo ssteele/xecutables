@@ -12,7 +12,7 @@ verify_bash_exports phoenix_assets_path
 bash_exports_valid=$?
 
 # validate all aliases
-verify_bash_aliases create_task_vim create_task_sublime
+verify_bash_aliases create_vim_task create_sublime_task
 bash_aliases_valid=$?
 
 if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
@@ -27,9 +27,6 @@ source ~/.bashrc
 #     CREATE TASK
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# get current year (folder)
-year=$(date +'%Y')
-
 # get task id
 if [[ -n "$1" ]]; then
     task_id="$1"
@@ -38,15 +35,10 @@ else
     read task_id
 fi
 
-# copy assets boilerplate
-cd ${phoenix_assets_path}/${year}
-mkdir ${task_id}
-cp -r ../task-template/* ${task_id}
-
 if echo "$EDITOR" | grep -q 'vim'; then
-    create_task_vim ${task_id}
+    create_vim_task ${task_id}
 elif echo "$EDITOR" | grep -q 'subl'; then
-    create_task_sublime ${task_id}
+    create_sublime_task ${task_id}
 fi
 
 exit

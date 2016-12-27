@@ -27,7 +27,6 @@ source ~/.bashrc
 #     CREATE VIM TASK
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 # get task id
 if [[ -n "$1" ]]; then
     task_id="$1"
