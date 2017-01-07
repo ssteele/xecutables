@@ -39,7 +39,7 @@ cd ${gr}/tests
 sett
 
 # set assets
-cd ${phoenix_assets_path}/2016
+cd ${phoenix_assets_path}/2017
 setA
 
 # set documentation

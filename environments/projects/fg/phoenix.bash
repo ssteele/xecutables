@@ -75,7 +75,7 @@ cd ${gr}/assets/js/fg
 setj
 
 # set tests
-cd ${gr}/tests
+cd ${gr}/application/tests
 sett
 
 # set proxies
@@ -91,7 +91,7 @@ cd ${gr}/application/logs
 setl
 
 # set assets
-cd ${phoenix_assets_path}/2016
+cd ${phoenix_assets_path}/2017
 setA
 
 # set documentation
