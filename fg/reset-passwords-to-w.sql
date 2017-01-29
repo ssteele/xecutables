@@ -1,0 +1,4 @@
+-- original command from brett
+-- echo "update \`config\` set \`value\`='1440' where \`name\`='system_timeout'; update \`user\` set \`core_id\`='678' where \`id\`=1; update \`user\` set \`core_id\`='677' where \`last_name\`='Baugh'; UPDATE \`user\` SET \`password\`='\$2a\$08\$IScrf1tkog3/C1dwXG0su.z15ADJ3ZCvU.LHmpirsIQu5wUTu4y5G', \`salt\`='xMTKFjW9Fh', \`bad_login\`=0, \`locked\`=0, \`password_last_change\`=NOW(), \`date_fail_login_ban\`=0;" | mysql ci_phoenix
+
+UPDATE user SET password='\$2a\$08\$IScrf1tkog3/C1dwXG0su.z15ADJ3ZCvU.LHmpirsIQu5wUTu4y5G', salt='xMTKFjW9Fh', bad_login=0, locked=0, password_last_change=NOW(), date_fail_login_ban=0;
