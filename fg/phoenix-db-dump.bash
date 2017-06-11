@@ -32,4 +32,9 @@ user='root'
 password='financegenius'
 database='fg_los'
 
+echo ''
+echo '...dumping current DB'
 mysqldump -h ${host} -u ${user} -p${password} ${database} > ${gr}/`date +%Y-%m-%d`_phoenix.sql
+echo ''
+
+exit
