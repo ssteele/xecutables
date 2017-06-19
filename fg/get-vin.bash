@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo '5GRGN23U13H119917' | pbcopy
+echo '4S4BRBLC9B3332483' | pbcopy
 
 exit
