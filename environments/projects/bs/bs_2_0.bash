@@ -36,7 +36,8 @@ setr
 
 # set config and general routing
 cd ${gr}/app/config
-setrr
+setf
+seto
 
 # set mysql db folder
 cd ${gr}/app/mysql
@@ -70,26 +71,27 @@ setb
 if [[ -n "$1" ]]; then
     bundle="$(tr '[:lower:]' '[:upper:]' <<< ${1:0:1})${1:1}"
 
+    # set bundle root
+    cd ${bs_bundles}/${bundle}Bundle
+    setrr
+
     # set bundle routing of fallback to app/config
-    if [ -f ${bs_bundles}/${bundle}Bundle/Resources/config/routing.yml ]; then
-        cd ${bs_bundles}/${bundle}Bundle/Resources/config
-        seto
-    else
-        grr
+    if [ -f ${grr}/Resources/config/routing.yml ]; then
+        cd ${grr}/Resources/config
         seto
     fi
 
     # set controllers
-    if [[ -d ${bs_bundles}/${bundle}Bundle/Controller ]]; then
-        cd ${bs_bundles}/${bundle}Bundle/Controller
+    if [[ -d ${grr}/Controller ]]; then
+        cd ${grr}/Controller
         setc
     else
         unsete c
     fi
 
     # set entities
-    if [[ -d ${bs_bundles}/${bundle}Bundle/Entity ]]; then
-        cd ${bs_bundles}/${bundle}Bundle/Entity
+    if [[ -d ${grr}/Entity ]]; then
+        cd ${grr}/Entity
         sete
     else
         unsete e
@@ -100,32 +102,32 @@ if [[ -n "$1" ]]; then
     # setm
 
     # set views
-    if [[ -d ${bs_bundles}/${bundle}Bundle/Resources/views ]]; then
-        cd ${bs_bundles}/${bundle}Bundle/Resources/views
+    if [[ -d ${grr}/Resources/views ]]; then
+        cd ${grr}/Resources/views
         setv
     else
         unsete v
     fi
 
     # set services
-    if [[ -d ${bs_bundles}/${bundle}Bundle/Service ]]; then
-        cd ${bs_bundles}/${bundle}Bundle/Service
+    if [[ -d ${grr}/Service ]]; then
+        cd ${grr}/Service
         sets
     else
         unsete s
     fi
 
     # set js
-    if [[ -d ${bs_bundles}/${bundle}Bundle/Resources/public/js ]]; then
-        cd ${bs_bundles}/${bundle}Bundle/Resources/public/js
+    if [[ -d ${grr}/Resources/public/js ]]; then
+        cd ${grr}/Resources/public/js
         setj
     else
         unsete j
     fi
 
     # set tests (if any exist)
-    if [[ -d ${bs_bundles}/${bundle}Bundle/Tests ]]; then
-        cd ${bs_bundles}/${bundle}Bundle/Tests
+    if [[ -d ${grr}/Tests ]]; then
+        cd ${grr}/Tests
         sett
     else
         unsete t
