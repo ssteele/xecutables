@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports editor_path phoenix_assets_path
+verify_bash_exports editor_path bs_2_0_assets_path
 bash_exports_valid=$?
 
 # validate all aliases
@@ -35,19 +35,19 @@ else
     exit
 fi
 
-if echo ${task_id} | grep -q '^FG'; then
+if echo ${task_id} | grep -q '^BS'; then
 
     # copy sublime boilerplate
     cd ${editor_path}/sublime_projects_tasks
-    cp boilerplates/fg.sublime-project "${task_id}.sublime-project"
-    cp boilerplates/fg.sublime-workspace "${task_id}.sublime-workspace"
+    cp boilerplates/bs.sublime-project "${task_id}.sublime-project"
+    cp boilerplates/bs.sublime-workspace "${task_id}.sublime-workspace"
     ${xec}/rename-sublime-project.pl ${task_id}
 
     # get current year (folder)
     year=$(date +'%Y')
 
     # copy assets boilerplate
-    cd ${phoenix_assets_path}/${year}
+    cd ${bs_2_0_assets_path}/${year}
     mkdir ${task_id}
     cp -r ../task-template/* ${task_id}
 

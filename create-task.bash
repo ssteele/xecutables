@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports phoenix_assets_path
+verify_bash_exports bs_2_0_assets_path
 bash_exports_valid=$?
 
 # validate all aliases
