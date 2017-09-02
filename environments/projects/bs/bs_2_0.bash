@@ -78,7 +78,9 @@ if [[ -n "$1" ]]; then
     # set bundle routing of fallback to app/config
     if [ -f ${grr}/Resources/config/routing.yml ]; then
         cd ${grr}/Resources/config
-        seto
+        setoo
+    else
+        unsete oo
     fi
 
     # set controllers
@@ -97,16 +99,11 @@ if [[ -n "$1" ]]; then
         unsete e
     fi
 
-    # # set models
-    # cd ${gf}/Model
-    # setm
-
-    # set views
-    if [[ -d ${grr}/Resources/views ]]; then
-        cd ${grr}/Resources/views
-        setv
+    if [[ -d ${grr}/Repository ]]; then
+        cd ${grr}/Repository
+        setm
     else
-        unsete v
+        unsete m
     fi
 
     # set services
@@ -115,6 +112,14 @@ if [[ -n "$1" ]]; then
         sets
     else
         unsete s
+    fi
+
+    # set views
+    if [[ -d ${grr}/Resources/views ]]; then
+        cd ${grr}/Resources/views
+        setv
+    else
+        unsete v
     fi
 
     # set js
