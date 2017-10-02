@@ -52,7 +52,7 @@ if echo ${task_id} | grep -q '^BS'; then
     cp -r ../task-template/* ${task_id}
 
     ${xec}/sublime-task.pl ${task_id}
-    n ${task_id}/0_notes.txt
+    n ${task_id}/_notes.txt
 
 else
 

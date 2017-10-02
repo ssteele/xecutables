@@ -34,18 +34,27 @@ env=${bs_2_0_path}
 cd ${env}
 setr
 
-# set config and general routing
-cd ${gr}/app/config
-setf
-seto
+# # set logs
+# cd ${gr}/application/logs
+# setl
 
 # set mysql db folder
 cd ${gr}/app/mysql
 setd
 
-# # set logs
-# cd ${gr}/application/logs
-# setl
+# set bundles
+bs_bundles=${gr}/src/BiteSquad
+cd ${bs_bundles}
+setb
+
+# set global config and routing
+cd ${gr}/app/config
+setff
+setoo
+
+# set vagrant
+gr
+setV
 
 # set assets
 cd ${bs_2_0_assets_path}/2017
@@ -55,19 +64,11 @@ setA
 cd ${work}/docs/bite-squad-2-0
 setD
 
-# set vagrant
-gr
-setV
-
 # set current
-cd ${dt}/desk/current
+cd ${dt}/desk/current-bs
 setC
 
-# set bundles
-bs_bundles=${gr}/src/BiteSquad
-cd ${bs_bundles}
-setb
-
+# set current bundle
 if [[ -n "$1" ]]; then
     bundle="$(tr '[:lower:]' '[:upper:]' <<< ${1:0:1})${1:1}"
 
@@ -78,9 +79,9 @@ if [[ -n "$1" ]]; then
     # set bundle routing of fallback to app/config
     if [ -f ${grr}/Resources/config/routing.yml ]; then
         cd ${grr}/Resources/config
-        setoo
+        seto
     else
-        unsete oo
+        unsete o
     fi
 
     # set controllers
@@ -128,6 +129,17 @@ if [[ -n "$1" ]]; then
         setj
     else
         unsete j
+    fi
+
+    # set styles
+    if [[ -d ${grr}/Resources/public/scss ]]; then
+        cd ${grr}/Resources/public/scss
+        setx
+    elif [[ -d ${grr}/Resources/public/css ]]; then
+        cd ${grr}/Resources/public/css
+        setx
+    else
+        unsete x
     fi
 
     # set tests (if any exist)
