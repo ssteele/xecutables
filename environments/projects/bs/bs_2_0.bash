@@ -38,6 +38,10 @@ setr
 # cd ${gr}/application/logs
 # setl
 
+# set assets folder
+cd ${gr}/web
+seta
+
 # set mysql db folder
 cd ${gr}/app/mysql
 setd
