@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports gr
+verify_bash_exports gR
 bash_exports_valid=$?
 
 # validate all aliases
@@ -31,7 +31,7 @@ user='root'
 password='password'
 database='bitesquad'
 
-gr
+gR
 
 echo ''
 echo '...dumping current DB'

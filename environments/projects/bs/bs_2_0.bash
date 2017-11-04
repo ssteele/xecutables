@@ -32,45 +32,45 @@ env=${bs_2_0_path}
 
 # set root
 cd ${env}
-setr
-
-# # set logs
-# cd ${gr}/application/logs
-# setl
+setR
 
 # set assets folder
-cd ${gr}/web
-seta
+cd ${gR}/web
+setA
 
 # set mysql db folder
-cd ${gr}/app/mysql
-setd
-
-# set bundles
-bs_bundles=${gr}/src/BiteSquad
-cd ${bs_bundles}
-setb
+cd ${gR}/app/mysql
+setD
 
 # set global config and routing
-cd ${gr}/app/config
-setff
-setoo
+cd ${gR}/app/config
+setF
+setO
+
+# set tests
+cd ${gR}/test
+setT
 
 # set vagrant
-gr
+gR
 setV
 
 # set assets
 cd ${bs_2_0_assets_path}/2017
-setA
+setAA
 
 # set documentation
 cd ${work}/docs/bite-squad-2-0
-setD
+setDD
 
 # set current
-cd ${dt}/desk/current-bs
-setC
+cd ${dt}/bs
+setCC
+
+# set bundles
+bs_bundles=${gR}/src/BiteSquad
+cd ${bs_bundles}
+setb
 
 # set current bundle
 if [[ -n "$1" ]]; then
@@ -78,81 +78,132 @@ if [[ -n "$1" ]]; then
 
     # set bundle root
     cd ${bs_bundles}/${bundle}Bundle
-    setrr
+    setr
 
-    # set bundle routing of fallback to app/config
-    if [ -f ${grr}/Resources/config/routing.yml ]; then
-        cd ${grr}/Resources/config
+    # set bundle routing or fallback to app/config
+    if [ -f ${gr}/Resources/config/routing.yml ]; then
+        cd ${gr}/Resources/config
         seto
     else
         unsete o
     fi
 
     # set controllers
-    if [[ -d ${grr}/Controller ]]; then
-        cd ${grr}/Controller
+    if [[ -d ${gr}/Controller ]]; then
+        cd ${gr}/Controller
         setc
     else
         unsete c
     fi
 
     # set entities
-    if [[ -d ${grr}/Entity ]]; then
-        cd ${grr}/Entity
+    if [[ -d ${gr}/Entity ]]; then
+        cd ${gr}/Entity
         sete
     else
         unsete e
     fi
 
-    if [[ -d ${grr}/Repository ]]; then
-        cd ${grr}/Repository
+    # set repositories
+    if [[ -d ${gr}/Repository ]]; then
+        cd ${gr}/Repository
         setm
     else
         unsete m
     fi
 
     # set services
-    if [[ -d ${grr}/Service ]]; then
-        cd ${grr}/Service
+    if [[ -d ${gr}/Service ]]; then
+        cd ${gr}/Service
         sets
     else
         unsete s
     fi
 
     # set views
-    if [[ -d ${grr}/Resources/views ]]; then
-        cd ${grr}/Resources/views
+    if [[ -d ${gr}/Resources/views ]]; then
+        cd ${gr}/Resources/views
         setv
     else
         unsete v
     fi
 
     # set js
-    if [[ -d ${grr}/Resources/public/js ]]; then
-        cd ${grr}/Resources/public/js
+    if [[ -d ${gr}/Resources/public/js ]]; then
+        cd ${gr}/Resources/public/js
         setj
     else
         unsete j
     fi
 
     # set styles
-    if [[ -d ${grr}/Resources/public/scss ]]; then
-        cd ${grr}/Resources/public/scss
+    if [[ -d ${gr}/Resources/public/scss ]]; then
+        cd ${gr}/Resources/public/scss
         setx
-    elif [[ -d ${grr}/Resources/public/css ]]; then
-        cd ${grr}/Resources/public/css
+    elif [[ -d ${gr}/Resources/public/css ]]; then
+        cd ${gr}/Resources/public/css
         setx
     else
         unsete x
     fi
 
-    # set tests (if any exist)
-    if [[ -d ${grr}/Tests ]]; then
-        cd ${grr}/Tests
+    # set tests
+    if [[ -d ${gr}/Tests ]]; then
+        cd ${gr}/Tests
         sett
     else
         unsete t
     fi
+
+    if [[ 'Core' != "$bundle" ]]; then
+
+        # set core bundle root
+        cd ${bs_bundles}/CoreBundle
+        setrr
+
+        # set core routing
+        cd ${grr}/Resources/config
+        setoo
+
+        # set core controllers
+        cd ${grr}/Controller
+        setcc
+
+        # set core entities
+        cd ${grr}/Entity
+        setee
+
+        # set core repositories
+        cd ${grr}/Repository
+        setmm
+
+        # set core services
+        cd ${grr}/Service
+        setss
+
+        # set core views
+        cd ${grr}/Resources/views
+        setvv
+
+        # set core js
+        cd ${grr}/Resources/public/js
+        setjj
+
+        # set core styles (future proof styles)
+        if [[ -d ${grr}/Resources/public/scss ]]; then
+            cd ${grr}/Resources/public/scss
+            setxx
+        elif [[ -d ${grr}/Resources/public/css ]]; then
+            cd ${grr}/Resources/public/css
+            setxx
+        fi
+
+        # set core tests
+        cd ${grr}/Tests
+        settt
+
+    fi
+
 fi
 
-gr
+gR

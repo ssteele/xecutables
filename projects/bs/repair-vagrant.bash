@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports gD gr
+verify_bash_exports gR gDD
 bash_exports_valid=$?
 
 # validate all aliases
@@ -28,10 +28,10 @@ source ~/.bashrc
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 vagrantCommandPath='/usr/local/bin/vagrant'
-virtualboxFolderPath="${gr}/.vagrant/machines/default/virtualbox"
-virtualboxConfigPath="${gD}/conf/virtualbox"
+virtualboxFolderPath="${gR}/.vagrant/machines/default/virtualbox"
+virtualboxConfigPath="${gDD}/conf/virtualbox"
 
-cd ${gr}
+cd ${gR}
 
 if [[ ! -f "${virtualboxFolderPath}/private_key" ]]; then
     # run vagrant status to create nonexistent directory
