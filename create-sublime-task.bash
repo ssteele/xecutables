@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports editor_path bs_2_0_assets_path
+verify_bash_exports editor_path bs_core_assets_path
 bash_exports_valid=$?
 
 # validate all aliases
@@ -47,7 +47,7 @@ if echo ${task_id} | grep -q '^BS'; then
     year=$(date +'%Y')
 
     # copy assets boilerplate
-    cd ${bs_2_0_assets_path}/${year}
+    cd ${bs_core_assets_path}/${year}
     mkdir ${task_id}
     cp -r ../task-template/* ${task_id}
 

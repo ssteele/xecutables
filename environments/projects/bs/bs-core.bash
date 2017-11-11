@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports bs_2_0_path bs_2_0_assets_path work dt
+verify_bash_exports bs_core_path bs_core_assets_path bs_core_documentation_path bs_core_tools_path work dt
 bash_exports_valid=$?
 
 # validate all aliases
@@ -24,11 +24,11 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     SET BS 2.0 ENVIRONMENT
+#     SET BS CORE ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # custom site
-env=${bs_2_0_path}
+env=${bs_core_path}
 
 # set root
 cd ${env}
@@ -56,12 +56,17 @@ gR
 setV
 
 # set assets
-cd ${bs_2_0_assets_path}/2017
+year=$(date +'%Y')
+cd ${bs_core_assets_path}/${year}
 setAA
 
 # set documentation
-cd ${work}/docs/bite-squad-2-0
+cd ${bs_core_documentation_path}
 setDD
+
+# set tools
+cd ${bs_core_tools_path}
+setTT
 
 # set current
 cd ${dt}/bs
