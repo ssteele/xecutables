@@ -38,7 +38,7 @@ echo '...dumping current DB'
 mysqldump -u${user} -p${password} ${database} > `date +%Y-%m-%d`_${database}.sql
 gzip `date +%Y-%m-%d`_${database}.sql
 echo ''
-echo '...now invoke `bs_db_fetch` from the host machine'
+echo '...now invoke `bsdbfetch` from the host machine'
 echo ''
 
 exit
