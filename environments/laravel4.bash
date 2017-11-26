@@ -44,58 +44,71 @@ proj=`echo ${env} | sed 's/_.*//'`
 
 # set root
 cd ${env}
-setr
+setR
 
 # set routes
-cd ${gr}/app
+cd ${gR}/app
+setO
 seto
 
-# set models
-cd ${go}/models
-setm
-
-# set views
-cd ${go}/views
-setv
-
-# set controllers
-cd ${go}/controllers
-setc
-
 # set db alters
-cd ${go}/database/migrations
-setd
+cd ${gO}/database/migrations
+setD
 
 # set public
-cd ${gr}/public
-setp
-
-# set js
-cd ${gr}/resources/assets/js
-setj
-
-# set style
-cd ${gr}/resources/assets/sass
-sets
+cd ${gR}/public
+setP
 
 # set compiled js
-cd ${gp}/js
-setjj
+cd ${gP}/js
+setJ
 
 # set compiled style
-cd ${gp}/css
-setss
+cd ${gP}/css
+setX
 
 # set tests
-cd ${go}/tests
-sett
+cd ${gO}/tests
+setT
 
 # set laravel source
-cd ${gr}/vendor/laravel/framework/src/Illuminate
-setl
+cd ${gR}/vendor/laravel/framework/src/Illuminate
+setS
 
 # set assets
 cd ${home}/assets/${env}
-setA
+setAA
 
-gr
+# set controllers
+cd ${gO}/controllers
+setc
+
+# set models
+cd ${gO}/models
+setm
+
+# set views
+cd ${gO}/views
+setv
+
+# set js
+cd ${gR}/resources/assets/js
+setj
+
+# set style
+cd ${gR}/resources/assets
+if [ -d 'sass' ]; then
+    cd sass
+    setx
+elif [ -d 'scss' ]; then
+    cd scss
+    setx
+elif [ -d 'less' ]; then
+    cd less
+    setx
+elif [ -d 'css' ]; then
+    cd css
+    setx
+fi
+
+gR

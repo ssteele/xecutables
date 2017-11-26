@@ -44,42 +44,43 @@ proj=`echo ${env} | sed 's/_.*//'`
 
 # set root
 cd ${env}
-setr
+setR
 
 # set routes
-cd ${gr}/routes
+cd ${gR}/routes
+setO
 seto
 
-# set models
-cd ${gr}/app
-setm
+# set db alters
+cd ${gR}/database/migrations
+setD
 
-# set views
-cd ${gr}/resources/views
-setv
+# set public
+cd ${gR}/public
+setP
+
+# set tests
+cd ${gR}/tests
+setT
+
+# set laravel source
+cd ${gR}/vendor/laravel/framework/src/Illuminate
+setS
+
+# set assets
+cd ${home}/assets/${env}
+setAA
 
 # set controllers
 cd ${gm}/Http/Controllers
 setc
 
-# set db alters
-cd ${gr}/database/migrations
-setd
+# set models
+cd ${gR}/app
+setm
 
-# set public
-cd ${gr}/public
-setp
+# set views
+cd ${gR}/resources/views
+setv
 
-# set tests
-cd ${gr}/tests
-sett
-
-# set laravel source
-cd ${gr}/vendor/laravel/framework/src/Illuminate
-setl
-
-# set assets
-cd ${home}/assets/${env}
-setA
-
-gr
+gR

@@ -44,58 +44,71 @@ proj=`echo ${env} | sed 's/_.*//'`
 
 # set root
 cd ${env}
-setr
+setR
 
 # set routes
-cd ${gr}/app/Http
+cd ${gR}/app/Http
+setO
 seto
 
-# set models
-cd ${gr}/app
-setm
+# set db alters
+cd ${gR}/database/migrations
+setD
 
-# set views
-cd ${gr}/resources/views
-setv
+# set public
+cd ${gR}/public
+setP
+
+# set compiled js
+cd ${gP}/js
+setJ
+
+# set compiled style
+cd ${gP}/css
+setX
+
+# set tests
+cd ${gR}/tests
+setT
+
+# set laravel source
+cd ${gR}/vendor/laravel/framework/src/Illuminate
+setS
+
+# set assets
+cd ${home}/assets/${env}
+setAA
 
 # set controllers
 cd ${go}/Controllers
 setc
 
-# set db alters
-cd ${gr}/database/migrations
-setd
+# set models
+cd ${gR}/app
+setm
 
-# set public
-cd ${gr}/public
-setp
+# set views
+cd ${gR}/resources/views
+setv
 
 # set js
-cd ${gr}/resources/assets/js
+cd ${gR}/resources/assets/js
 setj
 
 # set style
-cd ${gr}/resources/assets/sass
-sets
+cd ${gR}/resources/assets
+if [ -d 'sass' ]; then
+    cd sass
+    setx
+elif [ -d 'scss' ]; then
+    cd scss
+    setx
+elif [ -d 'less' ]; then
+    cd less
+    setx
+elif [ -d 'css' ]; then
+    cd css
+    setx
+fi
 
-# set compiled js
-cd ${gp}/js
-setjj
-
-# set compiled style
-cd ${gp}/css
-setss
-
-# set tests
-cd ${gr}/tests
-sett
-
-# set laravel source
-cd ${gr}/vendor/laravel/framework/src/Illuminate
-setl
-
-# set assets
-cd ${home}/assets/${env}
-setA
-
-gr
+gR

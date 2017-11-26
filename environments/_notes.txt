@@ -1,0 +1,41 @@
+
+`gR` webroot
+`gF` config
+`gO` routing
+`gD` mysql fixtures/migrations/what-have-you
+`gT` tests
+`gP` public folder
+`gA` public assets
+`gJ` compiled js
+`gX` compiled styles
+`gS` framework source
+`gV` vagrant/docker
+
+`gAA` personal assets
+`gDD` personal documentation
+`gTT` personal tools
+`gCC` personal temp directory
+
+`gr` package root
+`gf` package config
+`go` package routing
+`gc` package controllers
+`ge` package entities
+`gm` package models/repositories
+`gs` package services
+`gv` package views
+`gj` package js
+`gx` package styles
+`gt` package tests
+
+`grr` core package root
+`gff` core package config
+`goo` core package routing
+`gcc` core package controllers
+`gee` core package entities
+`gmm` core package models/repositories
+`gss` core package services
+`gvv` core package views
+`gjj` core package js
+`gxx` core package styles
+`gtt` core package tests

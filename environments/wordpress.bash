@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports lll
+verify_bash_exports home
 bash_exports_valid=$?
 
 # validate all aliases
@@ -32,10 +32,8 @@ root='sites'
 # root='public'
 
 if [[ -z "$1" ]]; then
-
     echo 'Which project? '
     read env
-
 else
     env="$1"
 fi
@@ -47,22 +45,30 @@ env=`echo ${env} | sed 's/[/]//g'`
 proj=`echo ${env} | sed 's/_.*//'`
 
 # set root
-cd ${lll}/${root}/${env}
-setr
+cd ${home}/${root}/${env}
+setR
 
-cd ${gr}/site
+# set assets
+if [ -d "${home}/assets/${env}" ]; then
+    cd ${home}/assets/${env}
+    year=`date "+%Y"`
+
+    if [ -d $year ]; then
+        cd ${year}
+    fi
+
+    setAA
+fi
+
+cd ${gR}/site
 
 # set plugins
 if [[ -d 'wp-content' || -d 'content' ]]; then
-
-    cd ${gr}/site/*content*/plugins
+    cd ${gR}/site/*content*/plugins
     setp
-
 elif [ -d 'assets' ]; then
-
-    cd ${gr}/site/*assets*/plugins
+    cd ${gR}/site/*assets*/plugins
     setp
-
 fi
 
 cd ../themes
@@ -70,69 +76,40 @@ sett
 
 # set parent theme
 if [ -d 'skeleton' ]; then
-
     cd skeleton
     sethh
     cd ..
-
 elif [ -d '*skeleton*' ]; then
-
     cd *skeleton*
     sethh
     cd ..
-
 fi
 
 found_home=false
 
 # set home
 if [ -d ${env} ]; then
-
     found_home=true
     cd ${env}
     seth
-
 elif [ -d ${proj} ]; then
-
     found_home=true
     cd ${proj}
     seth
-
 else
     echo 'Could not locate content directory'
 fi
 
 # set style
 if ${found_home}; then
-
     cd _
-
     if [ -d 'scss' ]; then
-
         cd scss
-        sets
-
+        setx
     elif [ -d 'sass' ]; then
-
         cd sass
-        sets
-
+        setx
     fi
-
-fi
-
-# set assets
-if [ -d "${lll}/assets/${env}" ]; then
-
-    cd ${lll}/assets/${env}
-    year=`date "+%Y"`
-
-    if [ -d $year ]; then
-        cd ${year}
-    fi
-
-    setA
-
 fi
 
 if ${found_home}; then

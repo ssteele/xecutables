@@ -34,22 +34,22 @@ env=${bs_core_path}
 cd ${env}
 setR
 
-# set assets folder
-cd ${gR}/web
-setA
-
-# set mysql db folder
-cd ${gR}/app/mysql
-setD
-
 # set global config and routing
 cd ${gR}/app/config
 setF
 setO
 
+# set mysql db folder
+cd ${gR}/app/mysql
+setD
+
 # set tests
 cd ${gR}/test
 setT
+
+# set assets folder
+cd ${gR}/web
+setA
 
 # set vagrant
 gR
