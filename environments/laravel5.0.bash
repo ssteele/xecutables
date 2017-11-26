@@ -76,8 +76,16 @@ cd ${gR}/vendor/laravel/framework/src/Illuminate
 setS
 
 # set assets
-cd ${home}/assets/${env}
-setAA
+if [ -d "${home}/assets/${env}" ]; then
+    cd ${home}/assets/${env}
+    year=`date "+%Y"`
+
+    if [ -d $year ]; then
+        cd ${year}
+    fi
+
+    setAA
+fi
 
 # set controllers
 cd ${go}/Controllers

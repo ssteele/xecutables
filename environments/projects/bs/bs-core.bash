@@ -56,9 +56,16 @@ gR
 setV
 
 # set assets
-year=$(date +'%Y')
-cd ${bs_core_assets_path}/${year}
-setAA
+if [ -d "${home}/assets/${env}" ]; then
+    cd ${home}/assets/${env}
+    year=`date "+%Y"`
+
+    if [ -d $year ]; then
+        cd ${year}
+    fi
+
+    setAA
+fi
 
 # set documentation
 cd ${bs_core_documentation_path}
