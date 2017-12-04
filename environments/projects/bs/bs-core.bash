@@ -56,8 +56,8 @@ gR
 setV
 
 # set assets
-if [ -d "${home}/assets/${env}" ]; then
-    cd ${home}/assets/${env}
+if [ -d "${bs_core_assets_path}" ]; then
+    cd ${bs_core_assets_path}
     year=`date "+%Y"`
 
     if [ -d $year ]; then
