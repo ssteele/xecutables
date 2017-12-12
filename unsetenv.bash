@@ -34,7 +34,7 @@ if [[ -n "$1" ]]; then
 
 else
 
-    envs=(ga gA gaa gb gB gbb gc gC gcc gd gD gdd ge gE gee gf gF gff gg gG ggg gh gH ghh gi gI gii gj gJ gjj gk gK gkk gl gL gll gm gM gmm gn gN gnn go gO goo gp gP gpp gq gQ gqq gr gR grr gs gS gss gt gT gtt gu gU guu gv gV gvv gw gW gww gx gX gxx gy gY gyy gz gZ gzz)
+    envs=(ga gA gaa gAA gb gB gbb gBB gc gC gcc gCC gd gD gdd gDD ge gE gee gEE gf gF gff gFF gg gG ggg gGG gh gH ghh gHH gi gI gii gII gj gJ gjj gJJ gk gK gkk gKK gl gL gll gLL gm gM gmm gMM gn gN gnn gNN go gO goo gOO gp gP gpp gPP gq gQ gqq gQQ gr gR grr gRR gs gS gss gSS gt gT gtt gTT gu gU guu gUU gv gV gvv gVV gw gW gww gWW gx gX gxx gXX gy gY gyy gYY gz gZ gzz gZZ)
     msg="    ...environment variables cleared"
 
 fi

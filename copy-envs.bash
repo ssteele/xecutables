@@ -41,6 +41,10 @@ if [ -n "$gaa" ]; then
     echo 'cd '$gaa'; setaa'
 fi
 
+if [ -n "$gAA" ]; then
+    echo 'cd '$gAA'; setAA'
+fi
+
 if [ -n "$gb" ]; then
     echo 'cd '$gb'; setb'
 fi
@@ -51,6 +55,10 @@ fi
 
 if [ -n "$gbb" ]; then
     echo 'cd '$gbb'; setbb'
+fi
+
+if [ -n "$gBB" ]; then
+    echo 'cd '$gBB'; setBB'
 fi
 
 if [ -n "$gc" ]; then
@@ -65,6 +73,10 @@ if [ -n "$gcc" ]; then
     echo 'cd '$gcc'; setcc'
 fi
 
+if [ -n "$gCC" ]; then
+    echo 'cd '$gCC'; setCC'
+fi
+
 if [ -n "$gd" ]; then
     echo 'cd '$gd'; setd'
 fi
@@ -75,6 +87,10 @@ fi
 
 if [ -n "$gdd" ]; then
     echo 'cd '$gdd'; setdd'
+fi
+
+if [ -n "$gDD" ]; then
+    echo 'cd '$gDD'; setDD'
 fi
 
 if [ -n "$ge" ]; then
@@ -89,6 +105,10 @@ if [ -n "$gee" ]; then
     echo 'cd '$gee'; setee'
 fi
 
+if [ -n "$gEE" ]; then
+    echo 'cd '$gEE'; setEE'
+fi
+
 if [ -n "$gf" ]; then
     echo 'cd '$gf'; setf'
 fi
@@ -99,6 +119,10 @@ fi
 
 if [ -n "$gff" ]; then
     echo 'cd '$gff'; setff'
+fi
+
+if [ -n "$gFF" ]; then
+    echo 'cd '$gFF'; setFF'
 fi
 
 if [ -n "$gg" ]; then
@@ -113,6 +137,10 @@ if [ -n "$ggg" ]; then
     echo 'cd '$ggg'; setgg'
 fi
 
+if [ -n "$gGG" ]; then
+    echo 'cd '$gGG'; setGG'
+fi
+
 if [ -n "$gh" ]; then
     echo 'cd '$gh'; seth'
 fi
@@ -123,6 +151,10 @@ fi
 
 if [ -n "$ghh" ]; then
     echo 'cd '$ghh'; sethh'
+fi
+
+if [ -n "$gHH" ]; then
+    echo 'cd '$gHH'; setHH'
 fi
 
 if [ -n "$gi" ]; then
@@ -137,6 +169,10 @@ if [ -n "$gii" ]; then
     echo 'cd '$gii'; setii'
 fi
 
+if [ -n "$gII" ]; then
+    echo 'cd '$gII'; setII'
+fi
+
 if [ -n "$gj" ]; then
     echo 'cd '$gj'; setj'
 fi
@@ -147,6 +183,10 @@ fi
 
 if [ -n "$gjj" ]; then
     echo 'cd '$gjj'; setjj'
+fi
+
+if [ -n "$gJJ" ]; then
+    echo 'cd '$gJJ'; setJJ'
 fi
 
 if [ -n "$gk" ]; then
@@ -161,6 +201,10 @@ if [ -n "$gkk" ]; then
     echo 'cd '$gkk'; setkk'
 fi
 
+if [ -n "$gKK" ]; then
+    echo 'cd '$gKK'; setKK'
+fi
+
 if [ -n "$gl" ]; then
     echo 'cd '$gl'; setl'
 fi
@@ -171,6 +215,10 @@ fi
 
 if [ -n "$gll" ]; then
     echo 'cd '$gll'; setll'
+fi
+
+if [ -n "$gLL" ]; then
+    echo 'cd '$gLL'; setLL'
 fi
 
 if [ -n "$gm" ]; then
@@ -185,6 +233,10 @@ if [ -n "$gmm" ]; then
     echo 'cd '$gmm'; setmm'
 fi
 
+if [ -n "$gMM" ]; then
+    echo 'cd '$gMM'; setMM'
+fi
+
 if [ -n "$gn" ]; then
     echo 'cd '$gn'; setn'
 fi
@@ -195,6 +247,10 @@ fi
 
 if [ -n "$gnn" ]; then
     echo 'cd '$gnn'; setnn'
+fi
+
+if [ -n "$gNN" ]; then
+    echo 'cd '$gNN'; setNN'
 fi
 
 if [ -n "$go" ]; then
@@ -209,6 +265,10 @@ if [ -n "$goo" ]; then
     echo 'cd '$goo'; setoo'
 fi
 
+if [ -n "$gOO" ]; then
+    echo 'cd '$gOO'; setOO'
+fi
+
 if [ -n "$gp" ]; then
     echo 'cd '$gp'; setp'
 fi
@@ -219,6 +279,10 @@ fi
 
 if [ -n "$gpp" ]; then
     echo 'cd '$gpp'; setpp'
+fi
+
+if [ -n "$gPP" ]; then
+    echo 'cd '$gPP'; setPP'
 fi
 
 if [ -n "$gq" ]; then
@@ -233,6 +297,10 @@ if [ -n "$gqq" ]; then
     echo 'cd '$gqq'; setqq'
 fi
 
+if [ -n "$gQQ" ]; then
+    echo 'cd '$gQQ'; setQQ'
+fi
+
 if [ -n "$gr" ]; then
     echo 'cd '$gr'; setr'
 fi
@@ -243,6 +311,10 @@ fi
 
 if [ -n "$grr" ]; then
     echo 'cd '$grr'; setrr'
+fi
+
+if [ -n "$gRR" ]; then
+    echo 'cd '$gRR'; setRR'
 fi
 
 if [ -n "$gs" ]; then
@@ -257,6 +329,10 @@ if [ -n "$gss" ]; then
     echo 'cd '$gss'; setss'
 fi
 
+if [ -n "$gSS" ]; then
+    echo 'cd '$gSS'; setSS'
+fi
+
 if [ -n "$gt" ]; then
     echo 'cd '$gt'; sett'
 fi
@@ -267,6 +343,10 @@ fi
 
 if [ -n "$gtt" ]; then
     echo 'cd '$gtt'; settt'
+fi
+
+if [ -n "$gTT" ]; then
+    echo 'cd '$gTT'; setTT'
 fi
 
 if [ -n "$gu" ]; then
@@ -281,6 +361,10 @@ if [ -n "$guu" ]; then
     echo 'cd '$guu'; setuu'
 fi
 
+if [ -n "$gUU" ]; then
+    echo 'cd '$gUU'; setUU'
+fi
+
 if [ -n "$gv" ]; then
     echo 'cd '$gv'; setv'
 fi
@@ -291,6 +375,10 @@ fi
 
 if [ -n "$gvv" ]; then
     echo 'cd '$gvv'; setvv'
+fi
+
+if [ -n "$gVV" ]; then
+    echo 'cd '$gVV'; setVV'
 fi
 
 if [ -n "$gw" ]; then
@@ -305,6 +393,10 @@ if [ -n "$gww" ]; then
     echo 'cd '$gww'; setww'
 fi
 
+if [ -n "$gWW" ]; then
+    echo 'cd '$gWW'; setWW'
+fi
+
 if [ -n "$gx" ]; then
     echo 'cd '$gx'; setx'
 fi
@@ -315,6 +407,10 @@ fi
 
 if [ -n "$gxx" ]; then
     echo 'cd '$gxx'; setxx'
+fi
+
+if [ -n "$gXX" ]; then
+    echo 'cd '$gXX'; setXX'
 fi
 
 if [ -n "$gy" ]; then
@@ -329,6 +425,10 @@ if [ -n "$gyy" ]; then
     echo 'cd '$gyy'; setyy'
 fi
 
+if [ -n "$gYY" ]; then
+    echo 'cd '$gYY'; setYY'
+fi
+
 if [ -n "$gz" ]; then
     echo 'cd '$gz'; setz'
 fi
@@ -339,6 +439,10 @@ fi
 
 if [ -n "$gzz" ]; then
     echo 'cd '$gzz'; setzz'
+fi
+
+if [ -n "$gZZ" ]; then
+    echo 'cd '$gZZ'; setZZ'
 fi
 
 echo ''

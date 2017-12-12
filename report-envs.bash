@@ -41,6 +41,10 @@ if [ -n "$gaa" ]; then
     echo '    aa: '$gaa
 fi
 
+if [ -n "$gAA" ]; then
+    echo '    AA: '$gAA
+fi
+
 if [ -n "$gb" ]; then
     echo '     b: '$gb
 fi
@@ -51,6 +55,10 @@ fi
 
 if [ -n "$gbb" ]; then
     echo '    bb: '$gbb
+fi
+
+if [ -n "$gBB" ]; then
+    echo '    BB: '$gBB
 fi
 
 if [ -n "$gc" ]; then
@@ -65,6 +73,10 @@ if [ -n "$gcc" ]; then
     echo '    cc: '$gcc
 fi
 
+if [ -n "$gCC" ]; then
+    echo '    CC: '$gCC
+fi
+
 if [ -n "$gd" ]; then
     echo '     d: '$gd
 fi
@@ -75,6 +87,10 @@ fi
 
 if [ -n "$gdd" ]; then
     echo '    dd: '$gdd
+fi
+
+if [ -n "$gDD" ]; then
+    echo '    DD: '$gDD
 fi
 
 if [ -n "$ge" ]; then
@@ -89,6 +105,10 @@ if [ -n "$gee" ]; then
     echo '    ee: '$gee
 fi
 
+if [ -n "$gEE" ]; then
+    echo '    EE: '$gEE
+fi
+
 if [ -n "$gf" ]; then
     echo '     f: '$gf
 fi
@@ -99,6 +119,10 @@ fi
 
 if [ -n "$gff" ]; then
     echo '    ff: '$gff
+fi
+
+if [ -n "$gFF" ]; then
+    echo '    FF: '$gFF
 fi
 
 if [ -n "$gg" ]; then
@@ -113,6 +137,10 @@ if [ -n "$ggg" ]; then
     echo '    gg: '$ggg
 fi
 
+if [ -n "$gGG" ]; then
+    echo '    GG: '$gGG
+fi
+
 if [ -n "$gh" ]; then
     echo '     h: '$gh
 fi
@@ -123,6 +151,10 @@ fi
 
 if [ -n "$ghh" ]; then
     echo '    hh: '$ghh
+fi
+
+if [ -n "$gHH" ]; then
+    echo '    HH: '$gHH
 fi
 
 if [ -n "$gi" ]; then
@@ -137,6 +169,10 @@ if [ -n "$gii" ]; then
     echo '    ii: '$gii
 fi
 
+if [ -n "$gII" ]; then
+    echo '    II: '$gII
+fi
+
 if [ -n "$gj" ]; then
     echo '     j: '$gj
 fi
@@ -147,6 +183,10 @@ fi
 
 if [ -n "$gjj" ]; then
     echo '    jj: '$gjj
+fi
+
+if [ -n "$gJJ" ]; then
+    echo '    JJ: '$gJJ
 fi
 
 if [ -n "$gk" ]; then
@@ -161,6 +201,10 @@ if [ -n "$gkk" ]; then
     echo '    kk: '$gkk
 fi
 
+if [ -n "$gKK" ]; then
+    echo '    KK: '$gKK
+fi
+
 if [ -n "$gl" ]; then
     echo '     l: '$gl
 fi
@@ -171,6 +215,10 @@ fi
 
 if [ -n "$gll" ]; then
     echo '    ll: '$gll
+fi
+
+if [ -n "$gLL" ]; then
+    echo '    LL: '$gLL
 fi
 
 if [ -n "$gm" ]; then
@@ -185,6 +233,10 @@ if [ -n "$gmm" ]; then
     echo '    mm: '$gmm
 fi
 
+if [ -n "$gMM" ]; then
+    echo '    MM: '$gMM
+fi
+
 if [ -n "$gn" ]; then
     echo '     n: '$gn
 fi
@@ -195,6 +247,10 @@ fi
 
 if [ -n "$gnn" ]; then
     echo '    nn: '$gnn
+fi
+
+if [ -n "$gNN" ]; then
+    echo '    NN: '$gNN
 fi
 
 if [ -n "$go" ]; then
@@ -209,6 +265,10 @@ if [ -n "$goo" ]; then
     echo '    oo: '$goo
 fi
 
+if [ -n "$gOO" ]; then
+    echo '    OO: '$gOO
+fi
+
 if [ -n "$gp" ]; then
     echo '     p: '$gp
 fi
@@ -219,6 +279,10 @@ fi
 
 if [ -n "$gpp" ]; then
     echo '    pp: '$gpp
+fi
+
+if [ -n "$gPP" ]; then
+    echo '    PP: '$gPP
 fi
 
 if [ -n "$gq" ]; then
@@ -233,6 +297,10 @@ if [ -n "$gqq" ]; then
     echo '    qq: '$gqq
 fi
 
+if [ -n "$gQQ" ]; then
+    echo '    QQ: '$gQQ
+fi
+
 if [ -n "$gr" ]; then
     echo '     r: '$gr
 fi
@@ -243,6 +311,10 @@ fi
 
 if [ -n "$grr" ]; then
     echo '    rr: '$grr
+fi
+
+if [ -n "$gRR" ]; then
+    echo '    RR: '$gRR
 fi
 
 if [ -n "$gs" ]; then
@@ -257,6 +329,10 @@ if [ -n "$gss" ]; then
     echo '    ss: '$gss
 fi
 
+if [ -n "$gSS" ]; then
+    echo '    SS: '$gSS
+fi
+
 if [ -n "$gt" ]; then
     echo '     t: '$gt
 fi
@@ -267,6 +343,10 @@ fi
 
 if [ -n "$gtt" ]; then
     echo '    tt: '$gtt
+fi
+
+if [ -n "$gTT" ]; then
+    echo '    TT: '$gTT
 fi
 
 if [ -n "$gu" ]; then
@@ -281,6 +361,10 @@ if [ -n "$guu" ]; then
     echo '    uu: '$guu
 fi
 
+if [ -n "$gUU" ]; then
+    echo '    UU: '$gUU
+fi
+
 if [ -n "$gv" ]; then
     echo '     v: '$gv
 fi
@@ -291,6 +375,10 @@ fi
 
 if [ -n "$gvv" ]; then
     echo '    vv: '$gvv
+fi
+
+if [ -n "$gVV" ]; then
+    echo '    VV: '$gVV
 fi
 
 if [ -n "$gw" ]; then
@@ -305,6 +393,10 @@ if [ -n "$gww" ]; then
     echo '    ww: '$gww
 fi
 
+if [ -n "$gWW" ]; then
+    echo '    WW: '$gWW
+fi
+
 if [ -n "$gx" ]; then
     echo '     x: '$gx
 fi
@@ -315,6 +407,10 @@ fi
 
 if [ -n "$gxx" ]; then
     echo '    xx: '$gxx
+fi
+
+if [ -n "$gXX" ]; then
+    echo '    XX: '$gXX
 fi
 
 if [ -n "$gy" ]; then
@@ -329,6 +425,10 @@ if [ -n "$gyy" ]; then
     echo '    yy: '$gyy
 fi
 
+if [ -n "$gYY" ]; then
+    echo '    YY: '$gYY
+fi
+
 if [ -n "$gz" ]; then
     echo '     z: '$gz
 fi
@@ -339,6 +439,10 @@ fi
 
 if [ -n "$gzz" ]; then
     echo '    zz: '$gzz
+fi
+
+if [ -n "$gZZ" ]; then
+    echo '    ZZ: '$gZZ
 fi
 
 echo ''
