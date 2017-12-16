@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports editor_path bs_core_assets_path
+verify_bash_exports editor_path bs_core_assets_path bs_core_documentation_path
 bash_exports_valid=$?
 
 # validate all aliases
@@ -52,7 +52,7 @@ if echo ${task_id} | grep -qE '^BS|WEB'; then
     cp -r ../task-template/* ${task_id}
 
     ${xec}/sublime-task.pl ${task_id}
-    n ${task_id}/_notes.txt
+    n ${bs_core_documentation_path}/proc/dev-update.txt ${task_id}/_notes.txt
 
 else
 
