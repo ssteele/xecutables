@@ -93,7 +93,7 @@ if [[ -n "$1" ]]; then
     setr
 
     # set bundle routing or fallback to app/config
-    if [ -f ${gr}/Resources/config/routing.yml ]; then
+    if [[ -d ${gr}/Resources/config ]]; then
         cd ${gr}/Resources/config
         seto
     else
