@@ -167,52 +167,91 @@ if [[ -n "$1" ]]; then
         unsete t
     fi
 
+    secondary_bundle='Core'
+    if [[ -n "$2" ]]; then
+        secondary_bundle="$(tr '[:lower:]' '[:upper:]' <<< ${2:0:1})${2:1}"
+    fi
+
     if [[ 'Core' != "$bundle" ]]; then
 
-        # set core bundle root
-        cd ${bs_bundles}/CoreBundle
+        # set secondary bundle root
+        cd ${bs_bundles}/${secondary_bundle}Bundle
         setrr
 
-        # set core routing
-        cd ${grr}/Resources/config
-        setoo
+        # set secondary bundle routing or fallback to app/config
+        if [[ -d ${grr}/Resources/config ]]; then
+            cd ${grr}/Resources/config
+            setoo
+        else
+            unsete oo
+        fi
 
-        # set core controllers
-        cd ${grr}/Controller
-        setcc
+        # set secondary bundle controllers
+        if [[ -d ${grr}/Controller ]]; then
+            cd ${grr}/Controller
+            setcc
+        else
+            unsete cc
+        fi
 
-        # set core entities
-        cd ${grr}/Entity
-        setee
+        # set secondary bundle entities
+        if [[ -d ${grr}/Entity ]]; then
+            cd ${grr}/Entity
+            setee
+        else
+            unsete ee
+        fi
 
-        # set core repositories
-        cd ${grr}/Repository
-        setmm
+        # set secondary bundle repositories
+        if [[ -d ${grr}/Repository ]]; then
+            cd ${grr}/Repository
+            setmm
+        else
+            unsete mm
+        fi
 
-        # set core services
-        cd ${grr}/Service
-        setss
+        # set secondary bundle services
+        if [[ -d ${grr}/Service ]]; then
+            cd ${grr}/Service
+            setss
+        else
+            unsete ss
+        fi
 
-        # set core views
-        cd ${grr}/Resources/views
-        setvv
+        # set secondary bundle views
+        if [[ -d ${grr}/Resources/views ]]; then
+            cd ${grr}/Resources/views
+            setvv
+        else
+            unsete vv
+        fi
 
-        # set core js
-        cd ${grr}/Resources/public/js
-        setjj
+        # set secondary bundle js
+        if [[ -d ${grr}/Resources/public/js ]]; then
+            cd ${grr}/Resources/public/js
+            setjj
+        else
+            unsete jj
+        fi
 
-        # set core styles (future proof styles)
+        # set secondary bundle styles
         if [[ -d ${grr}/Resources/public/scss ]]; then
             cd ${grr}/Resources/public/scss
             setxx
         elif [[ -d ${grr}/Resources/public/css ]]; then
             cd ${grr}/Resources/public/css
             setxx
+        else
+            unsete xx
         fi
 
-        # set core tests
-        cd ${grr}/Tests
-        settt
+        # set secondary bundle tests
+        if [[ -d ${grr}/Tests ]]; then
+            cd ${grr}/Tests
+            settt
+        else
+            unsete tt
+        fi
 
     fi
 
