@@ -36,4 +36,4 @@ for i in lines:
 
     prev_line = i
 
-print('\n    Alphabetized and written to .temp\n')
+print('\n    Alphabetized and written to ~/.temp\n')
