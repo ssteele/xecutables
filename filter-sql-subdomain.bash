@@ -30,19 +30,27 @@ source ~/.bashrc
 echo ''
 echo -n '     site (eg: valerotexasopen.org) => '
 read site
-echo -n '   sql file (eg: valero_2012-08-30) => '
+echo -n '   sql file (eg: valero_2012-08-30.sql) => '
 read sql_file
 echo -n '           old db prepend (eg: www) => '
 read old_sql_prepend
 echo -n '           new db prepend (eg: loc) => '
 read new_sql_prepend
-echo -n '              local port (eg: 8888) => '
-read local_port
+echo -n '              old local port (eg: 8888) => '
+read old_local_port
+echo -n '              new local port (eg: 8888) => '
+read new_local_port
 
-sed s,${old_sql_prepend}.${site},${site},g ${sql_file}.sql > ${sql_file}_temp.sql
-sed s,${site},${new_sql_prepend}.${site}:${local_port},g ${sql_file}_temp.sql > ${new_sql_prepend}_${sql_file}.sql
+sed s,${old_sql_prepend}.${site},${site},g ${sql_file} > ${sql_file}.temp1
+sed s,${site}:${old_local_port},${site},g ${sql_file}.temp1 > ${sql_file}.temp2
 
-rm -fr ${sql_file}_temp.sql
+if [[ -n $new_local_port ]]; then
+    sed s,${site},${new_sql_prepend}.${site}:${new_local_port},g ${sql_file}.temp2 > ${new_sql_prepend}_${sql_file}
+else
+    sed s,${site},${new_sql_prepend}.${site},g ${sql_file}.temp2 > ${new_sql_prepend}_${sql_file}
+fi
+
+rm -fr ${sql_file}.temp*
 
 echo ''
 echo 'Now get in there and do something like:'
