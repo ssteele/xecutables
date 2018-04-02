@@ -2,7 +2,7 @@
 
 
 # environment
-$tasks_path = '${editor_path}/vim_projects_tasks';
+$tasks_path = '${editor_path}/vim-projects-tasks';
 
 
 # execution

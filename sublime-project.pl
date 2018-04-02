@@ -3,7 +3,7 @@
 
 # environment
 $home_path = '${ss}';
-$projects_path = '${editor_path}/sublime_projects';
+$projects_path = '${editor_path}/sublime-projects';
 
 
 # execution

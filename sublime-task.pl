@@ -3,7 +3,7 @@
 
 # environment
 $home_path = '${ss}';
-$tasks_path = '${editor_path}/sublime_projects_tasks';
+$tasks_path = '${editor_path}/sublime-projects-tasks';
 $command = "${home_path}/bin/subl";
 
 
