@@ -2,9 +2,8 @@
 
 
 # environment
-$editor_path = '/Users/ssteele/editor';
-$tasks_path = "${editor_path}/sublime_projects_tasks";
-
+$editor_path = '/Users/stevenharville/ssteele/editor';
+$tasks_path = "${editor_path}/sublime-projects-tasks";
 
 # execution
 die "\nThis program requires command-line input\n\n" if (!$ARGV[0]);

@@ -8,7 +8,8 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports editor_path bs_core_assets_path bs_core_documentation_path
+# verify_bash_exports editor_path bs_core_assets_path bs_core_documentation_path
+verify_bash_exports editor_path
 bash_exports_valid=$?
 
 # validate all aliases
@@ -38,7 +39,7 @@ fi
 if echo ${task_id} | grep -qE '^BS|WEB'; then
 
     # copy sublime boilerplate
-    cd ${editor_path}/sublime_projects_tasks
+    cd ${editor_path}/sublime-projects-tasks
     cp boilerplates/bs.sublime-project "${task_id}.sublime-project"
     cp boilerplates/bs.sublime-workspace "${task_id}.sublime-workspace"
     ${xec}/rename-sublime-project.pl ${task_id}
@@ -57,11 +58,11 @@ if echo ${task_id} | grep -qE '^BS|WEB'; then
 else
 
     # copy sublime boilerplate
-    cd ${editor_path}/sublime_projects_tasks
+    cd ${editor_path}/sublime-projects-tasks
     cp boilerplates/global.sublime-project "${task_id}.sublime-project"
     cp boilerplates/global.sublime-workspace "${task_id}.sublime-workspace"
-    ${xec}/rename-sublime-project.pl ${task_id}
 
+    ${xec}/rename-sublime-project.pl ${task_id}
     ${xec}/sublime-task.pl ${task_id}
 
 fi
