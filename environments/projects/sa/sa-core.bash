@@ -1,38 +1,47 @@
 #!/bin/bash
 
 
-# # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# #     VERIFY ENVIRONMENT
-# # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     VERIFY ENVIRONMENT
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# source ${xec}/verify-bash-variables.bash
+source ${xec}/verify-bash-variables.bash
 
-# # validate all variables
-# verify_bash_exports bs_core_path bs_core_assets_path bs_core_documentation_path bs_core_tools_path work dt
-# bash_exports_valid=$?
+# validate all variables
+verify_bash_exports sa_vagrant_path sa_main_path sa_main_assets_path sa_main_docs_path sa_main_tools_path dt
+bash_exports_valid=$?
 
-# # validate all aliases
-# verify_bash_aliases
-# bash_aliases_valid=$?
+# validate all aliases
+verify_bash_aliases
+bash_aliases_valid=$?
 
-# if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
-#     return
-# fi
+if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
+    return
+fi
 
-# shopt -s expand_aliases
-# source ~/.bashrc
+shopt -s expand_aliases
+source ~/.bashrc
+
+# projects
+vagrant=${sa_vagrant_path}
+main=${sa_main_path}
 
 
-# # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# #     SET BS CORE ENVIRONMENT
-# # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     SET SA MAIN ENVIRONMENT
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# # custom site
-# env=${bs_core_path}
+# set vagrant
+cd ${vagrant}
+setV
 
-# # set root
-# cd ${env}
-# setR
+# set project root
+cd ${main}
+setRR
+
+# set web root
+cd ${gRR}/httpdocs
+setR
 
 # # set global config and routing
 # cd ${gR}/app/config
@@ -51,33 +60,29 @@
 # cd ${gR}/web
 # setA
 
-# # set vagrant
-# gR
-# setV
+# set assets
+if [ -d "${sa_main_assets_path}" ]; then
+    cd ${sa_main_assets_path}
+    year=`date "+%Y"`
 
-# # set assets
-# if [ -d "${bs_core_assets_path}" ]; then
-#     cd ${bs_core_assets_path}
-#     year=`date "+%Y"`
+    if [ -d $year ]; then
+        cd ${year}
+    fi
 
-#     if [ -d $year ]; then
-#         cd ${year}
-#     fi
+    setAA
+fi
 
-#     setAA
-# fi
+# set documentation
+cd ${sa_main_docs_path}
+setDD
 
-# # set documentation
-# cd ${bs_core_documentation_path}
-# setDD
+# set tools
+cd ${sa_main_tools_path}
+setTT
 
-# # set tools
-# cd ${bs_core_tools_path}
-# setTT
-
-# # set current
-# cd ${dt}/bs
-# setCC
+# set current
+cd ${dt}/sa
+setCC
 
 # # set bundles
 # bs_bundles=${gR}/src/BiteSquad
@@ -257,4 +262,4 @@
 
 # fi
 
-# gR
+gR
