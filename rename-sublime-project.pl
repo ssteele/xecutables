@@ -2,7 +2,8 @@
 
 
 # environment
-$editor_path = '/Users/stevenharville/ssteele/editor';
+$home_path = '/Users/ststeele';
+$editor_path = "${home_path}/ssteele/editor";
 $tasks_path = "${editor_path}/sublime-projects-tasks";
 
 # execution
