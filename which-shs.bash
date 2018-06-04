@@ -8,7 +8,7 @@
 source ${xec}/verify-bash-variables.bash
 
 # validate all variables
-verify_bash_exports
+verify_bash_exports ss
 bash_exports_valid=$?
 
 # validate all aliases
@@ -37,7 +37,7 @@ fi
 echo ''
 
 grep ${input} ~/.bashrc
-grep -r ${input} ~/bash
+grep -r ${input} ${ss}/bash
 echo ''
 
 alias ${input}
