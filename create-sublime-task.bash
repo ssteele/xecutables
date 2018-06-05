@@ -9,7 +9,7 @@ source ${xec}/verify-bash-variables.bash
 
 # validate all variables
 # verify_bash_exports editor_path bs_core_assets_path bs_core_documentation_path
-verify_bash_exports editor_path
+verify_bash_exports editor_path sa_assets_path sa_main_assets_path
 bash_exports_valid=$?
 
 # validate all aliases
@@ -36,7 +36,7 @@ else
     exit
 fi
 
-if echo ${task_id} | grep -qE '^BE|FE|GN|OM'; then
+if echo ${task_id} | grep -qE '(BE|FE|GN|OM)\d+$'; then
 
     # copy sublime boilerplate
     cd ${editor_path}/sublime-projects-tasks
@@ -48,12 +48,13 @@ if echo ${task_id} | grep -qE '^BE|FE|GN|OM'; then
     year=$(date +'%Y')
 
     # copy assets boilerplate
-    cd ${bs_core_assets_path}/${year}
+    cd ${sa_main_assets_path}/${year}
     mkdir ${task_id}
-    cp -r ../task-template/* ${task_id}
+    cp -r ${sa_assets_path}/task-template/* ${task_id}
 
     ${xec}/sublime-task.pl ${task_id}
-    n ${bs_core_documentation_path}/proc/dev-update.txt ${task_id}/_notes.txt
+    # n ${bs_core_documentation_path}/proc/dev-update.txt ${task_id}/_notes.txt
+    n ${task_id}/_notes.txt
 
 else
 
