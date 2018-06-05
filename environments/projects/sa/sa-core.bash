@@ -35,6 +35,10 @@ main=${sa_main_path}
 cd ${vagrant}
 setV
 
+# set logs
+cd ${$gV}//mounts/logs/www
+setL
+
 # set project root
 cd ${main}
 setRR
