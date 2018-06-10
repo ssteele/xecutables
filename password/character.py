@@ -5,8 +5,12 @@ numbers = '0 1 2 3 4 5 6 7 8 9'
 alphasLower = 'a b c d e f g h i j k l m n o p q r s t u v w x y z'
 alphasUpper = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
 specials = '! @ # $ % ^ & * ( ) - _ = + | { } [ ] ; : \' " < . , > / ?'
+specialsAbridged = '_ ! . & @'
 iosSpecialsPageOne = '0 1 2 3 4 5 6 7 8 9 - / : ; ( ) $ & @ " . , ? ! \''
 iosSpecialsPageTwo = '[ ] { } # % ^ * + = _ | ~ < > . , ? ! \''
+
+# dynamic character lists
+customSpecials = '! # $ % + / = @ ~'
 
 # character sets
 sets = {
@@ -68,6 +72,28 @@ sets = {
             "max": 5
         }
     ],
+    'abridged': [
+        {
+            "chars": alphasLower,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": alphasUpper,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": numbers,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": specialsAbridged,
+            "min": 3,
+            "max": 5
+        }
+    ],
     'ios': [
         {
             "chars": alphasLower,
@@ -88,6 +114,28 @@ sets = {
             "chars": iosSpecialsPageTwo,
             "min": 3,
             "max": 3
+        }
+    ],
+    'custom': [
+        {
+            "chars": alphasLower,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": alphasUpper,
+            "min": 1,
+            "max": 1
+        },
+        {
+            "chars": numbers,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": customSpecials,
+            "min": 3,
+            "max": 4
         }
     ]
 }
