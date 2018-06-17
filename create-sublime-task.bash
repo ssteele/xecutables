@@ -40,8 +40,8 @@ if echo ${task_id} | grep -qE '(BE|FE|GN|OM)\d+$'; then
 
     # copy sublime boilerplate
     cd ${editor_path}/sublime-projects-tasks
-    cp boilerplates/bs.sublime-project "${task_id}.sublime-project"
-    cp boilerplates/bs.sublime-workspace "${task_id}.sublime-workspace"
+    cp boilerplates/sa.sublime-project "${task_id}.sublime-project"
+    cp boilerplates/sa.sublime-workspace "${task_id}.sublime-workspace"
     ${xec}/rename-sublime-project.pl ${task_id}
 
     # get current year (folder)

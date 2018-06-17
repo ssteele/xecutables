@@ -36,7 +36,7 @@ cd ${vagrant}
 setV
 
 # set logs
-cd ${$gV}//mounts/logs/www
+cd ${gV}/mounts/logs/www
 setL
 
 # set project root
