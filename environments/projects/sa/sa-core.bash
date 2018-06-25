@@ -84,6 +84,10 @@ setDD
 cd ${sa_main_tools_path}
 setTT
 
+# set editor
+cd ${sa_editor_path}
+setEE
+
 # set current
 cd ${dt}/sa
 setCC
