@@ -36,7 +36,7 @@ else
     exit
 fi
 
-if echo ${task_id} | grep -qE '(BE|FE|GN|OM)\d+$'; then
+if echo ${task_id} | grep -qE '(BE|FE|GN|OM|TA)\d+$'; then
 
     # copy sublime boilerplate
     cd ${editor_path}/sublime-projects-tasks
