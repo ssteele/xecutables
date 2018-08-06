@@ -9,7 +9,7 @@ source ${xec}/verify-bash-variables.bash
 
 # validate all variables
 # verify_bash_exports editor_path bs_core_assets_path bs_core_documentation_path
-verify_bash_exports editor_path sa_assets_path sa_main_assets_path
+verify_bash_exports editor_path sa_assets_path sa_main_assets_path sa_nest_assets_path
 bash_exports_valid=$?
 
 # validate all aliases
@@ -28,6 +28,9 @@ source ~/.bashrc
 #     CREATE SUBLIME TASK
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+boilerplate="sa-nest"
+assets_path="${sa_nest_assets_path}"
+
 # get task id
 if [[ -n "$1" ]]; then
     task_id="$1"
@@ -40,15 +43,15 @@ if echo ${task_id} | grep -qE '(BE|FE|GN|OM|TA)\d+$'; then
 
     # copy sublime boilerplate
     cd ${editor_path}/sublime-projects-tasks
-    cp boilerplates/sa.sublime-project "${task_id}.sublime-project"
-    cp boilerplates/sa.sublime-workspace "${task_id}.sublime-workspace"
+    cp boilerplates/${boilerplate}.sublime-project "${task_id}.sublime-project"
+    cp boilerplates/${boilerplate}.sublime-workspace "${task_id}.sublime-workspace"
     ${xec}/rename-sublime-project.pl ${task_id}
 
     # get current year (folder)
     year=$(date +'%Y')
 
     # copy assets boilerplate
-    cd ${sa_main_assets_path}/${year}
+    cd ${assets_path}/${year}
     mkdir ${task_id}
     cp -r ${sa_assets_path}/task-template/* ${task_id}
 
