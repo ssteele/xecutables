@@ -39,6 +39,8 @@ if echo "$EDITOR" | grep -q 'vim'; then
     create_vim_task ${task_id}
 elif echo "$EDITOR" | grep -q 'subl'; then
     create_sublime_task ${task_id}
+elif echo "$EDITOR" | grep -q 'code'; then
+    create_vscode_task ${task_id}
 fi
 
 exit
