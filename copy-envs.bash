@@ -444,5 +444,3 @@ fi
 if [ -n "$gz" ]; then
     echo 'cd '$gz'; setz'
 fi
-
-echo ''
