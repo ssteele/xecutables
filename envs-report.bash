@@ -24,423 +24,331 @@ source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     COPY SHELL ENVIRONMENT
+#     REPORT SHELL NAVIGATION VARIABLES
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+envs=()
 
 echo ''
 
 if [ -n "$gAA" ]; then
-    echo 'cd '$gAA'; setAA'
+    envs+=( 'AA: '$gAA )
 fi
-
 if [ -n "$gBB" ]; then
-    echo 'cd '$gBB'; setBB'
+    envs+=( 'BB: '$gBB )
 fi
-
 if [ -n "$gCC" ]; then
-    echo 'cd '$gCC'; setCC'
+    envs+=( 'CC: '$gCC )
 fi
-
 if [ -n "$gDD" ]; then
-    echo 'cd '$gDD'; setDD'
+    envs+=( 'DD: '$gDD )
 fi
-
 if [ -n "$gEE" ]; then
-    echo 'cd '$gEE'; setEE'
+    envs+=( 'EE: '$gEE )
 fi
-
 if [ -n "$gFF" ]; then
-    echo 'cd '$gFF'; setFF'
+    envs+=( 'FF: '$gFF )
 fi
-
 if [ -n "$gGG" ]; then
-    echo 'cd '$gGG'; setGG'
+    envs+=( 'GG: '$gGG )
 fi
-
 if [ -n "$gHH" ]; then
-    echo 'cd '$gHH'; setHH'
+    envs+=( 'HH: '$gHH )
 fi
-
 if [ -n "$gII" ]; then
-    echo 'cd '$gII'; setII'
+    envs+=( 'II: '$gII )
 fi
-
 if [ -n "$gJJ" ]; then
-    echo 'cd '$gJJ'; setJJ'
+    envs+=( 'JJ: '$gJJ )
 fi
-
 if [ -n "$gKK" ]; then
-    echo 'cd '$gKK'; setKK'
+    envs+=( 'KK: '$gKK )
 fi
-
 if [ -n "$gLL" ]; then
-    echo 'cd '$gLL'; setLL'
+    envs+=( 'LL: '$gLL )
 fi
-
 if [ -n "$gMM" ]; then
-    echo 'cd '$gMM'; setMM'
+    envs+=( 'MM: '$gMM )
 fi
-
 if [ -n "$gNN" ]; then
-    echo 'cd '$gNN'; setNN'
+    envs+=( 'NN: '$gNN )
 fi
-
 if [ -n "$gOO" ]; then
-    echo 'cd '$gOO'; setOO'
+    envs+=( 'OO: '$gOO )
 fi
-
 if [ -n "$gPP" ]; then
-    echo 'cd '$gPP'; setPP'
+    envs+=( 'PP: '$gPP )
 fi
-
 if [ -n "$gQQ" ]; then
-    echo 'cd '$gQQ'; setQQ'
+    envs+=( 'QQ: '$gQQ )
 fi
-
 if [ -n "$gRR" ]; then
-    echo 'cd '$gRR'; setRR'
+    envs+=( 'RR: '$gRR )
 fi
-
 if [ -n "$gSS" ]; then
-    echo 'cd '$gSS'; setSS'
+    envs+=( 'SS: '$gSS )
 fi
-
 if [ -n "$gTT" ]; then
-    echo 'cd '$gTT'; setTT'
+    envs+=( 'TT: '$gTT )
 fi
-
 if [ -n "$gUU" ]; then
-    echo 'cd '$gUU'; setUU'
+    envs+=( 'UU: '$gUU )
 fi
-
 if [ -n "$gVV" ]; then
-    echo 'cd '$gVV'; setVV'
+    envs+=( 'VV: '$gVV )
 fi
-
 if [ -n "$gWW" ]; then
-    echo 'cd '$gWW'; setWW'
+    envs+=( 'WW: '$gWW )
 fi
-
 if [ -n "$gXX" ]; then
-    echo 'cd '$gXX'; setXX'
+    envs+=( 'XX: '$gXX )
 fi
-
 if [ -n "$gYY" ]; then
-    echo 'cd '$gYY'; setYY'
+    envs+=( 'YY: '$gYY )
 fi
-
 if [ -n "$gZZ" ]; then
-    echo 'cd '$gZZ'; setZZ'
+    envs+=( 'ZZ: '$gZZ )
 fi
 
 if [ -n "$gA" ]; then
-    echo 'cd '$gA'; setA'
+    envs+=( 'A: '$gA )
 fi
-
 if [ -n "$gB" ]; then
-    echo 'cd '$gB'; setB'
+    envs+=( 'B: '$gB )
 fi
-
 if [ -n "$gC" ]; then
-    echo 'cd '$gC'; setC'
+    envs+=( 'C: '$gC )
 fi
-
 if [ -n "$gD" ]; then
-    echo 'cd '$gD'; setD'
+    envs+=( 'D: '$gD )
 fi
-
 if [ -n "$gE" ]; then
-    echo 'cd '$gE'; setE'
+    envs+=( 'E: '$gE )
 fi
-
 if [ -n "$gF" ]; then
-    echo 'cd '$gF'; setF'
+    envs+=( 'F: '$gF )
 fi
-
 if [ -n "$gG" ]; then
-    echo 'cd '$gG'; setG'
+    envs+=( 'G: '$gG )
 fi
-
 if [ -n "$gH" ]; then
-    echo 'cd '$gH'; setH'
+    envs+=( 'H: '$gH )
 fi
-
 if [ -n "$gI" ]; then
-    echo 'cd '$gI'; setI'
+    envs+=( 'I: '$gI )
 fi
-
 if [ -n "$gJ" ]; then
-    echo 'cd '$gJ'; setJ'
+    envs+=( 'J: '$gJ )
 fi
-
 if [ -n "$gK" ]; then
-    echo 'cd '$gK'; setK'
+    envs+=( 'K: '$gK )
 fi
-
 if [ -n "$gL" ]; then
-    echo 'cd '$gL'; setL'
+    envs+=( 'L: '$gL )
 fi
-
 if [ -n "$gM" ]; then
-    echo 'cd '$gM'; setM'
+    envs+=( 'M: '$gM )
 fi
-
 if [ -n "$gN" ]; then
-    echo 'cd '$gN'; setN'
+    envs+=( 'N: '$gN )
 fi
-
 if [ -n "$gO" ]; then
-    echo 'cd '$gO'; setO'
+    envs+=( 'O: '$gO )
 fi
-
 if [ -n "$gP" ]; then
-    echo 'cd '$gP'; setP'
+    envs+=( 'P: '$gP )
 fi
-
 if [ -n "$gQ" ]; then
-    echo 'cd '$gQ'; setQ'
+    envs+=( 'Q: '$gQ )
 fi
-
 if [ -n "$gR" ]; then
-    echo 'cd '$gR'; setR'
+    envs+=( 'R: '$gR )
 fi
-
 if [ -n "$gS" ]; then
-    echo 'cd '$gS'; setS'
+    envs+=( 'S: '$gS )
 fi
-
 if [ -n "$gT" ]; then
-    echo 'cd '$gT'; setT'
+    envs+=( 'T: '$gT )
 fi
-
 if [ -n "$gU" ]; then
-    echo 'cd '$gU'; setU'
+    envs+=( 'U: '$gU )
 fi
-
 if [ -n "$gV" ]; then
-    echo 'cd '$gV'; setV'
+    envs+=( 'V: '$gV )
 fi
-
 if [ -n "$gW" ]; then
-    echo 'cd '$gW'; setW'
+    envs+=( 'W: '$gW )
 fi
-
 if [ -n "$gX" ]; then
-    echo 'cd '$gX'; setX'
+    envs+=( 'X: '$gX )
 fi
-
 if [ -n "$gY" ]; then
-    echo 'cd '$gY'; setY'
+    envs+=( 'Y: '$gY )
 fi
-
 if [ -n "$gZ" ]; then
-    echo 'cd '$gZ'; setZ'
+    envs+=( 'Z: '$gZ )
 fi
 
 if [ -n "$gaa" ]; then
-    echo 'cd '$gaa'; setaa'
+    envs+=( 'aa: '$gaa )
 fi
-
 if [ -n "$gbb" ]; then
-    echo 'cd '$gbb'; setbb'
+    envs+=( 'bb: '$gbb )
 fi
-
 if [ -n "$gcc" ]; then
-    echo 'cd '$gcc'; setcc'
+    envs+=( 'cc: '$gcc )
 fi
-
 if [ -n "$gdd" ]; then
-    echo 'cd '$gdd'; setdd'
+    envs+=( 'dd: '$gdd )
 fi
-
 if [ -n "$gee" ]; then
-    echo 'cd '$gee'; setee'
+    envs+=( 'ee: '$gee )
 fi
-
 if [ -n "$gff" ]; then
-    echo 'cd '$gff'; setff'
+    envs+=( 'ff: '$gff )
 fi
-
 if [ -n "$ggg" ]; then
-    echo 'cd '$ggg'; setgg'
+    envs+=( 'gg: '$ggg )
 fi
-
 if [ -n "$ghh" ]; then
-    echo 'cd '$ghh'; sethh'
+    envs+=( 'hh: '$ghh )
 fi
-
 if [ -n "$gii" ]; then
-    echo 'cd '$gii'; setii'
+    envs+=( 'ii: '$gii )
 fi
-
 if [ -n "$gjj" ]; then
-    echo 'cd '$gjj'; setjj'
+    envs+=( 'jj: '$gjj )
 fi
-
 if [ -n "$gkk" ]; then
-    echo 'cd '$gkk'; setkk'
+    envs+=( 'kk: '$gkk )
 fi
-
 if [ -n "$gll" ]; then
-    echo 'cd '$gll'; setll'
+    envs+=( 'll: '$gll )
 fi
-
 if [ -n "$gmm" ]; then
-    echo 'cd '$gmm'; setmm'
+    envs+=( 'mm: '$gmm )
 fi
-
 if [ -n "$gnn" ]; then
-    echo 'cd '$gnn'; setnn'
+    envs+=( 'nn: '$gnn )
 fi
-
 if [ -n "$goo" ]; then
-    echo 'cd '$goo'; setoo'
+    envs+=( 'oo: '$goo )
 fi
-
 if [ -n "$gpp" ]; then
-    echo 'cd '$gpp'; setpp'
+    envs+=( 'pp: '$gpp )
 fi
-
 if [ -n "$gqq" ]; then
-    echo 'cd '$gqq'; setqq'
+    envs+=( 'qq: '$gqq )
 fi
-
 if [ -n "$grr" ]; then
-    echo 'cd '$grr'; setrr'
+    envs+=( 'rr: '$grr )
 fi
-
 if [ -n "$gss" ]; then
-    echo 'cd '$gss'; setss'
+    envs+=( 'ss: '$gss )
 fi
-
 if [ -n "$gtt" ]; then
-    echo 'cd '$gtt'; settt'
+    envs+=( 'tt: '$gtt )
 fi
-
 if [ -n "$guu" ]; then
-    echo 'cd '$guu'; setuu'
+    envs+=( 'uu: '$guu )
 fi
-
 if [ -n "$gvv" ]; then
-    echo 'cd '$gvv'; setvv'
+    envs+=( 'vv: '$gvv )
 fi
-
 if [ -n "$gww" ]; then
-    echo 'cd '$gww'; setww'
+    envs+=( 'ww: '$gww )
 fi
-
 if [ -n "$gxx" ]; then
-    echo 'cd '$gxx'; setxx'
+    envs+=( 'xx: '$gxx )
 fi
-
 if [ -n "$gyy" ]; then
-    echo 'cd '$gyy'; setyy'
+    envs+=( 'yy: '$gyy )
 fi
-
 if [ -n "$gzz" ]; then
-    echo 'cd '$gzz'; setzz'
+    envs+=( 'zz: '$gzz )
 fi
 
 if [ -n "$ga" ]; then
-    echo 'cd '$ga'; seta'
+    envs+=( 'a: '$ga )
 fi
-
 if [ -n "$gb" ]; then
-    echo 'cd '$gb'; setb'
+    envs+=( 'b: '$gb )
 fi
-
 if [ -n "$gc" ]; then
-    echo 'cd '$gc'; setc'
+    envs+=( 'c: '$gc )
 fi
-
 if [ -n "$gd" ]; then
-    echo 'cd '$gd'; setd'
+    envs+=( 'd: '$gd )
 fi
-
 if [ -n "$ge" ]; then
-    echo 'cd '$ge'; sete'
+    envs+=( 'e: '$ge )
 fi
-
 if [ -n "$gf" ]; then
-    echo 'cd '$gf'; setf'
+    envs+=( 'f: '$gf )
 fi
-
 if [ -n "$gg" ]; then
-    echo 'cd '$gg'; setg'
+    envs+=( 'g: '$gg )
 fi
-
 if [ -n "$gh" ]; then
-    echo 'cd '$gh'; seth'
+    envs+=( 'h: '$gh )
 fi
-
 if [ -n "$gi" ]; then
-    echo 'cd '$gi'; seti'
+    envs+=( 'i: '$gi )
 fi
-
 if [ -n "$gj" ]; then
-    echo 'cd '$gj'; setj'
+    envs+=( 'j: '$gj )
 fi
-
 if [ -n "$gk" ]; then
-    echo 'cd '$gk'; setk'
+    envs+=( 'k: '$gk )
 fi
-
 if [ -n "$gl" ]; then
-    echo 'cd '$gl'; setl'
+    envs+=( 'l: '$gl )
 fi
-
 if [ -n "$gm" ]; then
-    echo 'cd '$gm'; setm'
+    envs+=( 'm: '$gm )
 fi
-
 if [ -n "$gn" ]; then
-    echo 'cd '$gn'; setn'
+    envs+=( 'n: '$gn )
 fi
-
 if [ -n "$go" ]; then
-    echo 'cd '$go'; seto'
+    envs+=( 'o: '$go )
 fi
-
 if [ -n "$gp" ]; then
-    echo 'cd '$gp'; setp'
+    envs+=( 'p: '$gp )
 fi
-
 if [ -n "$gq" ]; then
-    echo 'cd '$gq'; setq'
+    envs+=( 'q: '$gq )
 fi
-
 if [ -n "$gr" ]; then
-    echo 'cd '$gr'; setr'
+    envs+=( 'r: '$gr )
 fi
-
 if [ -n "$gs" ]; then
-    echo 'cd '$gs'; sets'
+    envs+=( 's: '$gs )
 fi
-
 if [ -n "$gt" ]; then
-    echo 'cd '$gt'; sett'
+    envs+=( 't: '$gt )
 fi
-
 if [ -n "$gu" ]; then
-    echo 'cd '$gu'; setu'
+    envs+=( 'u: '$gu )
 fi
-
 if [ -n "$gv" ]; then
-    echo 'cd '$gv'; setv'
+    envs+=( 'v: '$gv )
 fi
-
 if [ -n "$gw" ]; then
-    echo 'cd '$gw'; setw'
+    envs+=( 'w: '$gw )
 fi
-
 if [ -n "$gx" ]; then
-    echo 'cd '$gx'; setx'
+    envs+=( 'x: '$gx )
 fi
-
 if [ -n "$gy" ]; then
-    echo 'cd '$gy'; sety'
+    envs+=( 'y: '$gy )
+fi
+if [ -n "$gz" ]; then
+    envs+=( 'z: '$gz )
 fi
 
-if [ -n "$gz" ]; then
-    echo 'cd '$gz'; setz'
-fi
+for env in "${envs[@]}"; do
+    echo $env | sed -e "s|${HOME}|~|"
+done
+
+echo ''
