@@ -5,22 +5,27 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-source ${xec}/verify-bash-variables.bash
+bash_exports=''
+bash_aliases='search'
 
-# validate all variables
-verify_bash_exports
-bash_exports_valid=$?
+if [[ ! -z $bash_exports ]] || [[ ! -z $bash_aliases ]]; then
+    source ${xec}/verify-bash-variables.bash
 
-# validate all aliases
-verify_bash_aliases search
-bash_aliases_valid=$?
+    # validate all variables
+    verify_bash_exports $bash_exports
+    bash_exports_valid=$?
 
-if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
-    exit
+    # validate all aliases
+    verify_bash_aliases $bash_aliases
+    bash_aliases_valid=$?
+
+    if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
+        exit
+    fi
+
+    shopt -s expand_aliases
+    source ~/.bashrc
 fi
-
-shopt -s expand_aliases
-source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

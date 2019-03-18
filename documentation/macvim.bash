@@ -8,16 +8,16 @@ mvim -v                                                           # works in ter
 # v/vv: initialize macvim; open new window w/ tabs
 
 # fails: a bunch of errors
-$xec/open-macvim-tab.bash $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
+$xec/open-macvim-tab.bash $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
 
 # works
-open -a MacVim $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
+open -a MacVim $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
 
 # fails: ...3 files to edit
-mvim $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
+mvim $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
 
 # works
-mvim --remote-tab-silent $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
+mvim --remote-tab-silent $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
 
 
 
@@ -77,8 +77,8 @@ mvim --remote-tab-silent ~/Desktop/vimrc.orig
 
 
 # v/vv: initialize macvim; open new window w/ tabs
-open -a MacVim $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
-mvim --remote-tab-silent $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
+open -a MacVim $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
+mvim --remote-tab-silent $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
 
 # v: open new tab on the open window
 $xec/open-macvim-tab.bash ~/Desktop/vimrc.orig
@@ -97,8 +97,8 @@ $xec/open-macvim-tab.bash ~/Desktop/vimrc.orig 1
 
 
 # v/vv: initialize macvim; open new window w/ tabs
-vv $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
-# mvim --remote-tab-silent $xec/highlight_all.csh $xec/highlight_all.pl $xec/highlight_wp.csh
+vv $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
+# mvim --remote-tab-silent $xec/highlight-all.csh $xec/highlight-all.pl $xec/highlight-wp.csh
 
 # v: open new tab on the open window
 v ~/Desktop/vimrc.orig
