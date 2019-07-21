@@ -36,10 +36,15 @@ source ~/.bashrc
 # new_local_port='8888'
 
 echo ''
+if [[ -n "$1" ]]; then
+    sql_file="$1"
+    echo "    sql file (eg: valero_2012-08-30.sql) => ${sql_file}"
+else
+    echo -n '    sql file (eg: valero_2012-08-30.sql) => '
+    read sql_file
+fi
 echo -n '          site (eg: valerotexasopen.org) => '
 read site
-echo -n '    sql file (eg: valero_2012-08-30.sql) => '
-read sql_file
 echo -n '                old db prepend (eg: www) => '
 read old_sql_prepend
 echo -n '                new db prepend (eg: loc) => '
