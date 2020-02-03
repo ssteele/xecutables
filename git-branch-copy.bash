@@ -33,14 +33,18 @@ fi
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 if [[ -n "$1" ]]; then
-    id="$1"
+    uniqueName="$1"
 else
-    echo -n "ID: "
-    read id
+    echo -n "Unique name: "
+    read uniqueName
 fi
 
 currentBranch="`git branch | grep \* | cut -d ' ' -f2`"
-newBranch="!${currentBranch}-${id}"
+newBranch="!${currentBranch}-${uniqueName}"
 
-git branch -D ${newBranch}
+if [[ $(git rev-parse --verify --quiet "${newBranch}") ]]; then
+    git branch -D ${newBranch}
+fi
+
 git branch ${newBranch}
+echo "Created branch ${newBranch}"
