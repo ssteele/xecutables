@@ -5,22 +5,12 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-source ${xec}/verify-bash-variables.bash
+bash_exports=''
+bash_aliases=''
 
-# validate all variables
-verify_bash_exports
-bash_exports_valid=$?
-
-# validate all aliases
-verify_bash_aliases
-bash_aliases_valid=$?
-
-if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
-    exit
+if [[ ! -z $bash_exports ]] || [[ ! -z $bash_aliases ]]; then
+    source ${xec}/_bootstrap.bash
 fi
-
-shopt -s expand_aliases
-source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

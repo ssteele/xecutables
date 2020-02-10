@@ -5,23 +5,12 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-source ${xec}/verify-bash-variables.bash
+bash_exports='editor_path sa_assets_path sa_main_assets_path sa_nest_assets_path'
+bash_aliases='mm'
 
-# validate all variables
-# verify_bash_exports editor_path bs_core_assets_path bs_core_documentation_path
-verify_bash_exports editor_path sa_assets_path sa_main_assets_path sa_nest_assets_path
-bash_exports_valid=$?
-
-# validate all aliases
-verify_bash_aliases mm
-bash_aliases_valid=$?
-
-if [[ 0 = ${bash_exports_valid} || 0 = ${bash_aliases_valid} ]]; then
-    exit
+if [[ ! -z $bash_exports ]] || [[ ! -z $bash_aliases ]]; then
+    source ${xec}/_bootstrap.bash
 fi
-
-shopt -s expand_aliases
-source ~/.bashrc
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
