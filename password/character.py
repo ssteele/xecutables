@@ -131,11 +131,6 @@ sets = {
             "chars": numbers,
             "min": 3,
             "max": 5
-        },
-        {
-            "chars": customSpecials,
-            "min": 3,
-            "max": 4
         }
     ]
 }
