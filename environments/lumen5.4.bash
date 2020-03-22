@@ -79,13 +79,13 @@ if [ -d "${home}/assets/${env}" ]; then
     setAA
 fi
 
-# set controllers
-cd ${gm}/Http/Controllers
-setc
-
 # set models
 cd ${gR}/app
 setm
+
+# set controllers
+cd ${gm}/Http/Controllers
+setc
 
 # set views
 cd ${gR}/resources/views
