@@ -5,7 +5,7 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-bash_exports=''
+bash_exports='ss'
 bash_aliases=''
 
 if [[ ! -z $bash_exports ]] || [[ ! -z $bash_aliases ]]; then
@@ -32,9 +32,9 @@ path="${ss}/urls/${url}"
 ${xec}/www.pl ${path}
 
 # Open links
-/usr/bin/open -a /Applications/Google\ Chrome.app/ `/bin/cat /Users/ssteele/url_temp.txt`
+/usr/bin/open -a /Applications/Google\ Chrome.app/ `/bin/cat ~/url_temp.txt`
 
 # Clean up
-rm -fr /Users/ssteele/url_temp.txt
+rm -fr ~/url_temp.txt
 
 exit
