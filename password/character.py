@@ -9,6 +9,8 @@ specialsAbridged = '_ ! . & @'
 iosSpecialsPageOne = '0 1 2 3 4 5 6 7 8 9 - / : ; ( ) $ & @ " . , ? ! \''
 iosSpecialsPageTwo = '[ ] { } # % ^ * + = _ | ~ < > . , ? ! \''
 
+specialsRoundpoint = '! # $ % ( ) * @ ^ |'
+
 # dynamic character lists
 customSpecials = '! # $ % + / = @ ~'
 
@@ -132,5 +134,27 @@ sets = {
             "min": 3,
             "max": 5
         }
-    ]
+    ],
+    'roundpoint': [
+        {
+            "chars": alphasLower,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": alphasUpper,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": numbers,
+            "min": 3,
+            "max": 5
+        },
+        {
+            "chars": specialsRoundpoint,
+            "min": 3,
+            "max": 5
+        }
+    ],
 }
