@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+# todo: use command-line tool instead
+# sort -u unsorted.txt > ~/.temp
+
 import sys, subprocess
 
 if len(sys.argv) >= 2:
