@@ -1,7 +1,8 @@
 #!/usr/bin/python
 
 # todo: use command-line tool instead
-# sort -u unsorted.txt > ~/.temp
+# sort unsorted.txt > ~/.temp                                       # sort: many sorting options available
+# uniq sorted.txt ~/.temp                                           # dedupe only
 
 import sys, subprocess
 
