@@ -3,7 +3,7 @@
 
 # environment
 $home_path = '${ss}';
-$projects_path = '${editorPath}/vscode-projects';
+$projects_path = '${editorPath}/vscode-projs';
 $command = "${home_path}/bin/code";
 
 
