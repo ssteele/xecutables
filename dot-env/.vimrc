@@ -1,0 +1,1 @@
+/Users/ststeele/ssteele/vim/config/basic.vimrc

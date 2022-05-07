@@ -1,0 +1,9 @@
+
+--ignore-dir=.idea/
+--ignore-dir=node_modules/
+
+--type-set=ts:ext:ts,tsx
+--type-set=tsx:ext:ts,tsx
+--type-set=css:ext:css,scss
+--type-set=test:match:test,spec
+--type-set=junk:match:css,scss,test,spec
