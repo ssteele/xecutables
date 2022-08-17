@@ -341,3 +341,6 @@ for env in "${envs[@]}"; do
     # translate absolute to home-relative paths
     echo $env | sed -e "s|${HOME}|~|"
 done
+
+echo ""
+echo "gr"
