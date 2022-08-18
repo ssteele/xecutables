@@ -1,1 +1,1 @@
-/Users/ststeele/ssteele/vim/config/basic.vimrc
+/Users/stevensteele/ssteele/vim/config/basic.vimrc
