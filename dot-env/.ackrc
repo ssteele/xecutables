@@ -6,4 +6,6 @@
 --type-set=tsx:ext:ts,tsx
 --type-set=css:ext:css,scss
 --type-set=test:match:test,spec
+--type-set=bash:ext:bash,sh
+--type-set=md:ext:md
 --type-set=junk:match:css,scss,test,spec
