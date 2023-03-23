@@ -26,8 +26,8 @@ fi
 
 echo ''
 
-grep ${input} ~/.bashrc
-grep -r ${input} ${ss}/bash
+grep ${input} ~/.zshrc
+grep -r ${input} ${ss}/zsh
 echo ''
 
 alias ${input}
