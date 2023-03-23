@@ -21,23 +21,30 @@ if [[ -z "$1" ]]; then
     echo ''
     echo 'Please supply a search term to match an available patch below:'
     echo ''
-    ls $gPP
+    ls ${gPP}/*
     echo ''
     exit
 fi
 
-stashName="$1"
+parentDirectory="${gPP}/"
+patchDirectory=""
+patchName="${1}"
+if [[ -n "${2}" ]]; then
+    patchDirectory="${1}/"
+    patchName="${2}"
+fi
+
 IFS=$'\n'
-for patch in $( ls $gPP ); do
-    if [[ $patch =~ "$stashName" ]]; then
-        patchToApply="$patch"
+for patch in $( ls ${parentDirectory}${patchDirectory} ); do
+    if [[ ${patch} =~ "${patchName}" ]]; then
+        patchToApply="${patch}"
         break
     fi
 done
 
 if [ -n "${patchToApply}" ]; then
-    git apply < ${gPP}/${patchToApply}
-    echo -n 'Patch applied: '; echo \$gPP/${patchToApply}
+    git apply < ${parentDirectory}${patchDirectory}${patchToApply}
+    echo -n 'Patch applied: '; echo \$gPP/${patchDirectory}${patchToApply}
     git status
 else
     echo 'Patch not found'
