@@ -24,8 +24,15 @@ function verify_zsh_exports {
 function verify_zsh_aliases {
     valid=1
 
+    # isLlAlias=$(alias ll)
+    # echo -n 'isLlAlias: '; echo $isLlAlias
+    # isGaAlias=$(alias gA)
+    # echo -n 'isGaAlias: '; echo $isGaAlias
     for var in "$@"; do
-        if [[ ! `alias ${var} 2>/dev/null` ]]; then
+        # isVarAliased=$(alias ${var})                              // @todo: alias checks not working
+        # echo -n 'isVarAliased: '; echo $isVarAliased
+        # if [[ -n "${isVarAliased}" ]]; then
+        if [ ! `alias ${var} 2>/dev/null` ]; then
             echo "   '${var}' has not been properly aliased"
             valid=0
         fi
