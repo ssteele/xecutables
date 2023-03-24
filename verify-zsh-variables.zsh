@@ -9,7 +9,7 @@ function verify_zsh_exports {
     valid=1
 
     for var in "$@"; do
-        if [[ -z "${!var+x}" ]]; then
+        if [ -z "${var++}" ]; then
             echo "    \$${var} has not been exported"
             valid=0
         fi
