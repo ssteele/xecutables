@@ -30,6 +30,5 @@ else
     envFile="$1"
 fi
 
-envsCopy > .tmp
-diff ${envFile} .tmp
-rm -fr .tmp
+envsCopy > ${HOME}/_env
+diff ${envFile} ${HOME}/_env

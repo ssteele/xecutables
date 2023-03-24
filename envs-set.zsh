@@ -26,12 +26,23 @@ if [[ -f ./_env.zsh || -f ./_env.bash ]]; then
     fi
 
     if [[ `alias gA 2>/dev/null` ]]; then
-        envsDiff=$(${xec}/envs-diff.zsh ${gA}/_env.zsh)
-        if [[ -n "${envsDiff}" ]]; then
-            echo ''
-            echo ${envsDiff}
-            echo 'There are unsaved changes with the current environment'
-            echo ''
+        oldZshEnvFile=false
+        if [ -f ${gA}/_env.zsh ]; then
+            oldZshEnvFile="${gA}/_env.zsh"
+        elif [ -f ${gA}/_env.bash ]; then
+            oldZshEnvFile="${gA}/_env.bash"
+        fi
+
+        if [ "${oldZshEnvFile}" != false ] ; then
+            envsDiff=$(${xec}/envs-diff.zsh ${oldZshEnvFile})
+            if [[ -n "${envsDiff}" ]]; then
+                echo ''
+                echo ${envsDiff}
+                echo 'There are unsaved changes in the current environment'
+                echo ''
+            else
+                doSet=true
+            fi
         fi
     else
         envsReport=$(${xec}/envs-report.zsh)
@@ -59,8 +70,7 @@ if [[ -f ./_env.zsh || -f ./_env.bash ]]; then
             source ./_env.bash
         fi 
 
-        echo ''
-        echo 'Environment set'
+        echo '    ...new environment set'
         echo ''
     fi 
 else
