@@ -7,7 +7,6 @@
 
 source ${xec}/verify-bash-variables.bash
 
-
 # validate all variables
 verify_bash_exports $bash_exports
 bash_exports_valid=$?

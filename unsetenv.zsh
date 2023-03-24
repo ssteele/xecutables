@@ -5,11 +5,11 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-bash_exports=''
-bash_aliases=''
+zsh_exports=''
+zsh_aliases=''
 
-if [[ ! -z $bash_exports ]] || [[ ! -z $bash_aliases ]]; then
-    source ${xec}/_bootstrap.bash
+if [[ ! -z $zsh_exports ]] || [[ ! -z $zsh_aliases ]]; then
+    source ${xec}/_bootstrap.zsh
 fi
 
 
