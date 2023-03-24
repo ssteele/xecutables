@@ -15,9 +15,7 @@ zsh_exports_valid=$?
 verify_zsh_aliases $zsh_aliases
 zsh_aliases_valid=$?
 
-if [[ 0 = ${zsh_exports_valid} || 0 = ${zsh_aliases_valid} ]]; then
-    exit
+if [[ 1 = ${zsh_exports_valid} && 1 = ${zsh_aliases_valid} ]]; then
+    setopt aliases
+    source ~/.zshrc
 fi
-
-setopt aliases
-source ~/.zshrc
