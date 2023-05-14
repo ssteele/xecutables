@@ -9,4 +9,4 @@
 --type-set=zsh:ext:zsh
 --type-set=bash:ext:bash,sh
 --type-set=md:ext:md
---type-set=junk:match:css,scss,test,spec
+--type-set=junk:match:test,spec,css,scss
