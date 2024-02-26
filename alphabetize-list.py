@@ -1,43 +1,17 @@
 #!/usr/bin/python
 
-# todo: use command-line tool instead
-# sort unsorted.txt > ~/.temp                                       # sort: many sorting options available
+# sort unsorted.txt > ~/.temp                                       # sort: many sorting options available via cli
 # uniq sorted.txt ~/.temp                                           # dedupe only
 
 import sys, subprocess
 
 if len(sys.argv) >= 2:
 
-    # assign from command line arg
-    fi_name = sys.argv[1]
+    filename = sys.argv[1]
+    command = 'sort ' + filename + ' > sorted.txt'
 
-else:
+else :
+    command = 'sort unsorted.txt > sorted.txt'
 
-    # assign from prompt
-    print('Path to file: ')
-    fi_name = sys.stdin.readline().rstrip()
-
-# get absolute file path
-path = subprocess.check_output('pwd', shell=True).rstrip()
-fi_path = path + '/' + fi_name
-
-# open 'in' file, read, and sort
-lines = [line.rstrip() for line in open(fi_path)]
-lines.sort()
-
-# open 'out' file
-path = subprocess.check_output('cd ~; pwd', shell=True).rstrip()
-file_path = path + '/.temp'
-fo = open(file_path, 'w')
-
-# write out
-prev_line = ''
-for i in lines:
-
-    # remove duplicate entries
-    if i != prev_line:
-        fo.writelines([i, "\n"])
-
-    prev_line = i
-
-print('\n    Alphabetized and written to ~/.temp\n')
+subprocess.run('pbcopy', text = True, input = command)
+print(command)
