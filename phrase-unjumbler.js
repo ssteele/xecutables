@@ -1,3 +1,5 @@
+// node phrase-unjumbler.js 'A ANSIT FMOR YERV EVSIPEXEN KIN WSA EDCSEORIDV TWE.'
+
 const fs = require('fs');
 const DICTIONARY_FILE = '/usr/share/dict/words';
 
