@@ -2,17 +2,20 @@
 
 // update me
 const cluesText = `
-• Mauve liked the person who brought a apple. (?)
-• A trusted message read: A GNITCARTSID ENIHCAM SAW DNUOF A NOITANOD YB NA YLRAE SUNMULA. (?)
-• Sister Lapis had a heavy backpack. (?)
-• Father Mango had not been in the dormitory. (?)
-• Harvi and Ada were at the radio station. (?)
+• A trumpet was not in the bad cafeteria. (?)
+• Coach Raspberry's fingerprint was found on a heavy backpack. (?)
+• Lady Violet was curious about the person who had a brain in a jar. It's a curious thing to have a brain in a jar. (?)
+• A messenger gave Logico a note that read: NOCAED SIRGIDREV SAW NEES GNIGNAH DNUORA NI A ECALP OT YDUTS EHT SRATS. (?)
+• You were standing in a fountain. That's a curious thing to stand in a fountain. (?)
+`;
+
+const statementsText = `
 `;
 
 const questions = [
-  '• Who was with Harvi?',
-  '• What item did she have?',
-  '• Where was she?',
+  '• Who was with you?',
+  '• What item did you have?',
+  '• Where were you?',
 ];
 
 // register elements
@@ -42,18 +45,36 @@ columnHeaderEls.map(e => {
 });
 
 // add clues
-let cluesEl = document.createElement('div');
-const cluesHeader = document.createElement('h3');
-cluesHeader.innerHTML = 'CLUES';
-cluesEl.appendChild(cluesHeader);
 const clues = cluesText.split(' (?)');
-clues.map(c => {
-  let p = document.createElement('p');
-  p.innerHTML = c;
-  p.style = 'font-size:14px';
-  cluesEl.appendChild(p);
-});
-mainEl.appendChild(cluesEl);
+if (clues.length > 1) {
+  let cluesEl = document.createElement('div');
+  const cluesHeader = document.createElement('h3');
+  cluesHeader.innerHTML = 'CLUES';
+  cluesEl.appendChild(cluesHeader);
+  clues.map(c => {
+    let p = document.createElement('p');
+    p.innerHTML = c;
+    p.style = 'font-size:14px';
+    cluesEl.appendChild(p);
+  });
+  mainEl.appendChild(cluesEl);
+}
+
+// add statements
+const statements = statementsText.split(' (?)');
+if (statements.length > 1) {
+  let statementsEl = document.createElement('div');
+  const statementsHeader = document.createElement('h3');
+  statementsHeader.innerHTML = 'STATEMENTS';
+  statementsEl.appendChild(statementsHeader);
+  statements.map(c => {
+    let p = document.createElement('p');
+    p.innerHTML = c;
+    p.style = 'font-size:14px';
+    statementsEl.appendChild(p);
+  });
+  mainEl.appendChild(statementsEl);
+}
 
 // add questions
 let questionsEl = document.createElement('div');
