@@ -1,12 +1,15 @@
 // unjumblePhrase 'A ANSIT FMOR YERV EVSIPEXEN KIN WSA EDCSEORIDV TWE.'
 
+// open the notebook
+newPage('notebook');
+
 // update me
 const cluesText = `
-• A trumpet was not in the bad cafeteria. (?)
-• Coach Raspberry's fingerprint was found on a heavy backpack. (?)
-• Lady Violet was curious about the person who had a brain in a jar. It's a curious thing to have a brain in a jar. (?)
-• A messenger gave Logico a note that read: NOCAED SIRGIDREV SAW NEES GNIGNAH DNUORA NI A ECALP OT YDUTS EHT SRATS. (?)
-• You were standing in a fountain. That's a curious thing to stand in a fountain. (?)
+• One of Logico's contacts in The Magical Society of the Lock gave him this tip: A LICNEP GNIVAHS SAW DEREVOCSID NI EHT KEERG RETAEHT. (?)
+• The Duchess of Vermillion never set foot by the in memoriam plaque. (?)
+• Mayor Honey's fingerprint was found in the history building. (?)
+• Karate hands were not in the history building. (?)
+• You were on a laptop. (?)
 `;
 
 const statementsText = `
@@ -18,31 +21,39 @@ const questions = [
   '• Where were you?',
 ];
 
-// register elements
-const mainEl = $('#mainbox')[0];
-const bookEl = $('#floating-book')[0];
-const textAreaEl = $('#notepad')[0];
-const buttonEl = $('.opening-button')[0];
-const weaponsLabelEl = $('.notebook-label-vertical')[0];
-const suspectsLabelEl = $('.notebook-label')[0];
-const columnHeaderEls = $$('.divtablehead span');
-
 // hide things
+const bookEl = $('#floating-book')[0];
 bookEl.style.setProperty('display', 'none');
+const textAreaEl = $('#notepad')[0];
 textAreaEl.style.setProperty('display', 'none');
+const buttonEl = $('.opening-button')[0];
 buttonEl.style.setProperty('display', 'none');
 
 // update labels
+const weaponsLabelEl = $('.notebook-label-vertical')[0];
 weaponsLabelEl.innerHTML = 'ITEMS';
+const suspectsLabelEl = $('.notebook-label')[0];
 suspectsLabelEl.innerHTML = 'PEOPLE';
 
 // add column titles
+const columnHeaderEls = $$('.divtablehead .grid_emoji');
 columnHeaderEls.map(e => {
   const title = e.getAttribute('title');
   if (title) {
     e.innerHTML = `${e.innerHTML} <span style="color:black;font-size:9px;">${title}</span>`
   }
 });
+
+// add row titles
+const rownHeaderEls = $$('.divTableCell .grid_emoji');
+rownHeaderEls.map(e => {
+  const title = e.getAttribute('title');
+  if (title) {
+    e.innerHTML = `${e.innerHTML} <span style="color:black;font-size:9px;position:absolute;right:30px;width:100px">${title}</span>`
+  }
+});
+
+const mainEl = $('#mainbox')[0];
 
 // add clues
 const clues = cluesText.split(' (?)');
@@ -77,14 +88,16 @@ if (statements.length > 1) {
 }
 
 // add questions
-let questionsEl = document.createElement('div');
-const questionsHeader = document.createElement('h3');
-questionsHeader.innerHTML = 'QUESTIONS';
-questionsEl.appendChild(questionsHeader);
-questions.map(q => {
-  let p = document.createElement('p');
-  p.innerHTML = q;
-  p.style = 'font-size:14px';
-  questionsEl.appendChild(p);
-});
-mainEl.appendChild(questionsEl);
+if (questions.length > 1) {
+  let questionsEl = document.createElement('div');
+  const questionsHeader = document.createElement('h3');
+  questionsHeader.innerHTML = 'QUESTIONS';
+  questionsEl.appendChild(questionsHeader);
+  questions.map(q => {
+    let p = document.createElement('p');
+    p.innerHTML = q;
+    p.style = 'font-size:14px';
+    questionsEl.appendChild(p);
+  });
+  mainEl.appendChild(questionsEl);
+}
