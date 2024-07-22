@@ -1,15 +1,13 @@
 // unjumblePhrase 'A ANSIT FMOR YERV EVSIPEXEN KIN WSA EDCSEORIDV TWE.'
-
-// open the notebook
-newPage('notebook');
+// reverseChars 'GYM CHESSBOXING THE'
 
 // update me
 const cluesText = `
-• One of Logico's contacts in The Magical Society of the Lock gave him this tip: A LICNEP GNIVAHS SAW DEREVOCSID NI EHT KEERG RETAEHT. (?)
-• The Duchess of Vermillion never set foot by the in memoriam plaque. (?)
-• Mayor Honey's fingerprint was found in the history building. (?)
-• Karate hands were not in the history building. (?)
-• You were on a laptop. (?)
+• Uncle Midnight was not in Old Main. (?)
+• Signor Emerald's fingerprint was found on a board game. (?)
+• Brother Brownstone was childhood friends with the person who brought a pair of safety goggles. (?)
+• An anonymous source that Logico trusted passed him a message that read: A OY-OY SAW DNUOF NI EHT DAB AIRETEFAC. (?)
+• You were in the Chessboxing Gym. (?)
 `;
 
 const statementsText = `
@@ -20,6 +18,17 @@ const questions = [
   '• What item did you have?',
   '• Where were you?',
 ];
+
+// grab the date, style
+const dateEl = $$('#theme-block p')[1];
+dateEl.style.setProperty('font-weight', 'normal');
+dateEl.style.setProperty('position', 'absolute');
+dateEl.style.setProperty('top', '0');
+dateEl.style.setProperty('left', '0');
+dateEl.style.setProperty('font-size', '9px');
+
+// open the notebook
+newPage('notebook');
 
 // hide things
 const bookEl = $('#floating-book')[0];
@@ -45,8 +54,10 @@ columnHeaderEls.map(e => {
 });
 
 // add row titles
-const rownHeaderEls = $$('.divTableCell .grid_emoji');
-rownHeaderEls.map(e => {
+const rowHeaderEls = $$('.divTableCell .grid_emoji');
+rowHeaderEls
+  .filter(e => e.getAttribute('onclick').includes('weapon'))
+  .map(e => {
   const title = e.getAttribute('title');
   if (title) {
     e.innerHTML = `${e.innerHTML} <span style="color:black;font-size:9px;position:absolute;right:30px;width:100px">${title}</span>`
@@ -101,3 +112,6 @@ if (questions.length > 1) {
   });
   mainEl.appendChild(questionsEl);
 }
+
+// add the date
+mainEl.appendChild(dateEl);
