@@ -3,11 +3,16 @@
 
 // update me
 const cluesText = `
-• Uncle Midnight was not in Old Main. (?)
-• Signor Emerald's fingerprint was found on a board game. (?)
-• Brother Brownstone was childhood friends with the person who brought a pair of safety goggles. (?)
-• An anonymous source that Logico trusted passed him a message that read: A OY-OY SAW DNUOF NI EHT DAB AIRETEFAC. (?)
-• You were in the Chessboxing Gym. (?)
+• Viscount Eminence's fingerprint was found in the private suite. (?)
+• A shiv made from a mont blanc was discovered in the movie theatre. (?)
+• A messenger from The Illuminated League of the Unbarred Goddess gave Logico a note that read: ERTAEHT EIVOM EHT NI NEES SAW YENOH ROYAM. (?)
+• Evidence from a lawyer was discovered by a video game console. (?)
+• Lord Lavender had either a shiv or cufflinks. (?)
+• Silverton the Legend was in love with the person who brought a bottle of cabernet toilet wine. (?)
+• Silverton the Legend was seen hanging around in the Michelin-starred cafeteria. (?)
+• A golden bird was found at the guard tower. (?)
+• Comrade Champagne was seen at the guard tower. (?)
+• You were in the sauna. Why are you in the sauna??! (?)
 `;
 
 const statementsText = `
@@ -47,8 +52,11 @@ suspectsLabelEl.innerHTML = 'PEOPLE';
 // add column titles
 const columnHeaderEls = $$('.divtablehead .grid_emoji');
 columnHeaderEls.map(e => {
-  const title = e.getAttribute('title');
+  let title = e.getAttribute('title');
   if (title) {
+    if (title.includes('felt like to kill')) {
+      title = 'no known motive';
+    }
     e.innerHTML = `${e.innerHTML} <span style="color:black;font-size:9px;">${title}</span>`
   }
 });
