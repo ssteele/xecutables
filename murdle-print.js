@@ -1,18 +1,18 @@
+// type `dailyPuzzleSetup`, click to show source file, debugger on today_day_number, then overwite today_date
+// today_date = new Date('2024-01-08T12:00:00');
+// note: main murdles don't populate correctly on mondays and sundays
+
 // unjumblePhrase 'A ANSIT FMOR YERV EVSIPEXEN KIN WSA EDCSEORIDV TWE.'
-// reverseChars 'GYM CHESSBOXING THE'
+// reverseChars 'EHT GNIXOBSSEHC MYG'
+// reverseStrings 'GYM CHESSBOXING THE'
 
 // update me
 const cluesText = `
-• Viscount Eminence's fingerprint was found in the private suite. (?)
-• A shiv made from a mont blanc was discovered in the movie theatre. (?)
-• A messenger from The Illuminated League of the Unbarred Goddess gave Logico a note that read: ERTAEHT EIVOM EHT NI NEES SAW YENOH ROYAM. (?)
-• Evidence from a lawyer was discovered by a video game console. (?)
-• Lord Lavender had either a shiv or cufflinks. (?)
-• Silverton the Legend was in love with the person who brought a bottle of cabernet toilet wine. (?)
-• Silverton the Legend was seen hanging around in the Michelin-starred cafeteria. (?)
-• A golden bird was found at the guard tower. (?)
-• Comrade Champagne was seen at the guard tower. (?)
-• You were in the sauna. Why are you in the sauna??! (?)
+• Mx. Tangerine's fingerprint was found on a brain in a jar. (?)
+• A brain in a jar was not found in the history building. (?)
+• A messenger from The Brotherhood of the Hidden Ruins gave Logico a note that read: A LICNEP GNIVAHS SAW DEREVOCSID NI EHT KEERG RETAEHT. (?)
+• Viscount Eminence and the person who brought an exploding beaker had a history together. (?)
+• You were in the freshman dormitory. (?)
 `;
 
 const statementsText = `
