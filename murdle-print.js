@@ -9,14 +9,20 @@
 
 // update me
 const cluesText = `
-• Mx. Tangerine's fingerprint was found on a brain in a jar. (?)
-• A brain in a jar was not found in the history building. (?)
-• A messenger from The Brotherhood of the Hidden Ruins gave Logico a note that read: A LICNEP GNIVAHS SAW DEREVOCSID NI EHT KEERG RETAEHT. (?)
-• Viscount Eminence and the person who brought an exploding beaker had a history together. (?)
-• You were in the freshman dormitory. (?)
+• Fangs were brought by the person who wanted to escape blackmail.
+• A messenger from The Venerable Body of the Ancient Arrow gave Logico a note that read: LRAE RGYE WNDETA TO CLEESIN A TWISNSE.
+• A human femur was not found in the Screaming Forest.
+• Baron Maroon's fingerprint was found on the Violet Isles.
+• Admiral Navy wanted to hide an affair.
+• A silver-detector gave a positive reading on Mayor Honey.
+• Either Mayor Honey or Baron Maroon was in the Iron Palace Museum.
 `;
 
 const statementsText = `
+• Earl Grey: I was in the People's City.
+• Mayor Honey: I did not bring a human femur.
+• Admiral Navy: Baron Maroon did not bring a torch.
+• Baron Maroon: Admiral Navy did not bring ivory night eater fangs.
 `;
 
 const questions = [
@@ -76,15 +82,15 @@ rowHeaderEls
 const mainEl = $('#mainbox')[0];
 
 // add clues
-const clues = cluesText.split(' (?)');
-if (clues.length > 1) {
+const clues = cluesText.split('\n');
+if (clues.find(c => !!c)) {
   let cluesEl = document.createElement('div');
   const cluesHeader = document.createElement('h3');
   cluesHeader.innerHTML = 'CLUES';
   cluesEl.appendChild(cluesHeader);
   clues.map(c => {
     let p = document.createElement('p');
-    p.innerHTML = c;
+    p.innerHTML = c.split(' (?')[0];
     p.style = 'font-size:14px';
     cluesEl.appendChild(p);
   });
@@ -92,15 +98,15 @@ if (clues.length > 1) {
 }
 
 // add statements
-const statements = statementsText.split(' (?)');
-if (statements.length > 1) {
+const statements = statementsText.split('\n');
+if (statements.find(s => !!s)) {
   let statementsEl = document.createElement('div');
   const statementsHeader = document.createElement('h3');
   statementsHeader.innerHTML = 'STATEMENTS';
   statementsEl.appendChild(statementsHeader);
-  statements.map(c => {
+  statements.map(s => {
     let p = document.createElement('p');
-    p.innerHTML = c;
+    p.innerHTML = s.split(' (?')[0];
     p.style = 'font-size:14px';
     statementsEl.appendChild(p);
   });
@@ -108,7 +114,7 @@ if (statements.length > 1) {
 }
 
 // add questions
-if (questions.length > 1) {
+if (questions.find(q => !!q)) {
   let questionsEl = document.createElement('div');
   const questionsHeader = document.createElement('h3');
   questionsHeader.innerHTML = 'QUESTIONS';
