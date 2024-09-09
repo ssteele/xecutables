@@ -9,25 +9,26 @@
 
 // update me
 const cluesText = `
-• Fangs were brought by the person who wanted to escape blackmail.
-• A messenger from The Venerable Body of the Ancient Arrow gave Logico a note that read: LRAE RGYE WNDETA TO CLEESIN A TWISNSE.
-• A human femur was not found in the Screaming Forest.
-• Baron Maroon's fingerprint was found on the Violet Isles.
-• Admiral Navy wanted to hide an affair.
-• A silver-detector gave a positive reading on Mayor Honey.
-• Either Mayor Honey or Baron Maroon was in the Iron Palace Museum.
+• Chef Aubergine's fingerprint was found in the guard tower.
+• A shiv was not found on the tennis court.
+• An anonymous source that Logico trusted passed him a message that read: ICVE EDNPTEISR EVUMA SWA NESE GNGHIAN RAUODN NI HET APS. (Decode.)
+• Viscount Eminence was seen in the private suite.
+• Either Viscount Eminence or The Duchess of Vermillion had a poisoned birthday cake.
+• Miss Saffron was accusing the person who carried a pair of literal golden handcuffs.
+• Chef Aubergine disliked the person who brought a shiv made from a Mont Blanc.
+• Either a shiv, handcuffs, or cufflinks were present on the tennis court.
+• A golden handcuff key was discovered in the movie theater.
+• Lady Violet had a rope of designer clothes.
+• You were in the cafeteria.
 `;
 
 const statementsText = `
-• Earl Grey: I was in the People's City.
-• Mayor Honey: I did not bring a human femur.
-• Admiral Navy: Baron Maroon did not bring a torch.
-• Baron Maroon: Admiral Navy did not bring ivory night eater fangs.
 `;
 
 const questions = [
   '• Who was with you?',
   '• What item did you have?',
+  // '• What was the motive?',
   '• Where were you?',
 ];
 
