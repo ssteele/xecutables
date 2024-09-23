@@ -9,26 +9,25 @@
 
 // update me
 const cluesText = `
-• Chef Aubergine's fingerprint was found in the guard tower.
-• A shiv was not found on the tennis court.
-• An anonymous source that Logico trusted passed him a message that read: ICVE EDNPTEISR EVUMA SWA NESE GNGHIAN RAUODN NI HET APS. (Decode.)
-• Viscount Eminence was seen in the private suite.
-• Either Viscount Eminence or The Duchess of Vermillion had a poisoned birthday cake.
-• Miss Saffron was accusing the person who carried a pair of literal golden handcuffs.
-• Chef Aubergine disliked the person who brought a shiv made from a Mont Blanc.
-• Either a shiv, handcuffs, or cufflinks were present on the tennis court.
-• A golden handcuff key was discovered in the movie theater.
-• Lady Violet had a rope of designer clothes.
-• You were in the cafeteria.
+• A messenger from The Band of the Hidden Marot gave Logico a note that read: HET ECUSSDH FO VELIILROMN ENTAWD TO LMIEITANE A PYS.
+• Mayor Honey wanted to escape blackmail.
+• A white hair was found wrapped around the antique flintlock.
+• Traces of a weapon made of metal were found in the choir loft.
+• Analysts discovered traces of a weapon made of metal on the clothing of Vice President Mauve.
+• The person who wanted to silence a witness was in the bell tower.
 `;
 
 const statementsText = `
+• Earl Grey: Yarn was in the bell tower.
+• The Duchess of Vermillion: Yarn was in the bell tower.
+• Vice President Mauve: The Duchess of Vermillion brought yarn.
+• Mayor Honey: An antique flintlock was in the nave.
 `;
 
 const questions = [
   '• Who was with you?',
   '• What item did you have?',
-  // '• What was the motive?',
+  '• What was the motive?',
   '• Where were you?',
 ];
 
@@ -39,6 +38,28 @@ dateEl.style.setProperty('position', 'absolute');
 dateEl.style.setProperty('top', '0');
 dateEl.style.setProperty('left', '0');
 dateEl.style.setProperty('font-size', '9px');
+
+// fetch suspect details
+let shsSuspects = [];
+try {
+  shsSuspects = suspect_array.map(suspect => {
+    const characteristics = suspect_details[suspect?.name]?.characteristics;
+    return {
+      ...characteristics,
+      name: suspect?.name,
+    }
+  });
+} catch (e) {
+  console.error('Error fetching suspect details', e);
+}
+
+// fetch weapon details
+let shsWeapons = [];
+try {
+  shsWeapons = weapons.map(weapon => shuffledweapons.find(sw => sw?.name === weapon));
+} catch (e) {
+  console.error('Error fetching weapon details', e);
+}
 
 // open the notebook
 newPage('notebook');
@@ -81,6 +102,45 @@ rowHeaderEls
 });
 
 const mainEl = $('#mainbox')[0];
+
+// add people
+if (shsSuspects.length) {
+  let peopleEl = document.createElement('div');
+  const peopleHeader = document.createElement('h3');
+  peopleHeader.innerHTML = 'PEOPLE';
+  peopleEl.appendChild(peopleHeader);
+  try {
+    shsSuspects.map(s => {
+      let p = document.createElement('p');
+      p.innerHTML = `${s?.name} | ${inchesToFeet(s?.height)} | ${s?.hand}-handed | ${s?.eyes} eyes | ${s?.hair} hair | born ${s?.birthday} (${s?.sign})`;
+      p.style = 'font-size:14px;line-height:1rem';
+      peopleEl.appendChild(p);
+    });
+  } catch (e) {
+    console.error('Error rendering suspect details', e);
+  }
+  mainEl.appendChild(peopleEl);
+}
+
+// add items
+if (shsWeapons.length) {
+  let itemsEl = document.createElement('div');
+  const itemsHeader = document.createElement('h3');
+  itemsHeader.innerHTML = 'ITEMS';
+  itemsEl.appendChild(itemsHeader);
+  try {
+    shsWeapons.map(s => {
+      let p = document.createElement('p');
+      const clue = s?.clue ? ` | look for ${s?.clue} left behind` : '';
+      p.innerHTML = `${s?.name} | ${s?.weight}-weight | made of ${s?.materials.join(' & ')}${clue}`;
+      p.style = 'font-size:14px;line-height:1rem';
+      itemsEl.appendChild(p);
+    });
+  } catch (e) {
+    console.error('Error rendering suspect details', e);
+  }
+  mainEl.appendChild(itemsEl);
+}
 
 // add clues
 const clues = cluesText.split('\n');
