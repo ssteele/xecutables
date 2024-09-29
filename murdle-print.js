@@ -9,25 +9,27 @@
 
 // update me
 const cluesText = `
-• A messenger from The Band of the Hidden Marot gave Logico a note that read: HET ECUSSDH FO VELIILROMN ENTAWD TO LMIEITANE A PYS.
-• Mayor Honey wanted to escape blackmail.
-• A white hair was found wrapped around the antique flintlock.
-• Traces of a weapon made of metal were found in the choir loft.
-• Analysts discovered traces of a weapon made of metal on the clothing of Vice President Mauve.
-• The person who wanted to silence a witness was in the bell tower.
+• A $5000 bill for 20 minutes of work was discovered next to a net.
+• A bone-detector gave a positive reading in the movie theater.
+• A messenger from The Final Association of the Closed Bow gave Logico a note that read: RLOD ELVAREDN WAS EESN GHNNAIG URDANO TEW. (Decode.)
+• Admiral Navy was seen in the Michelin-starred cafeteria.
+• Blue eyes stared at a shiv made from a Mont Blanc.
+• General Coffee brought a diamond-encrusted skeleton key.
+• Mx. Tangerine was seen beneath the cushions of a velvet seat.
+• Dean Glaucous's fingerprint was found on a poisoned birthday cake.
+• A medium-weight weapon was found in the guard tower.
+• The spa is wet.
+• The movie theater has red velvet seats.
+• A pair of literal golden handcuffs was clearly used to commit the crime.
 `;
 
 const statementsText = `
-• Earl Grey: Yarn was in the bell tower.
-• The Duchess of Vermillion: Yarn was in the bell tower.
-• Vice President Mauve: The Duchess of Vermillion brought yarn.
-• Mayor Honey: An antique flintlock was in the nave.
 `;
 
 const questions = [
   '• Who was with you?',
   '• What item did you have?',
-  '• What was the motive?',
+  // '• What was the motive?',
   '• Where were you?',
 ];
 
@@ -152,7 +154,7 @@ if (clues.find(c => !!c)) {
   clues.map(c => {
     let p = document.createElement('p');
     p.innerHTML = c.split(' (?')[0];
-    p.style = 'font-size:14px';
+    p.style = 'font-size:14px;line-height:1rem';
     cluesEl.appendChild(p);
   });
   mainEl.appendChild(cluesEl);
@@ -168,7 +170,7 @@ if (statements.find(s => !!s)) {
   statements.map(s => {
     let p = document.createElement('p');
     p.innerHTML = s.split(' (?')[0];
-    p.style = 'font-size:14px';
+    p.style = 'font-size:14px;line-height:1rem';;
     statementsEl.appendChild(p);
   });
   mainEl.appendChild(statementsEl);
@@ -183,7 +185,7 @@ if (questions.find(q => !!q)) {
   questions.map(q => {
     let p = document.createElement('p');
     p.innerHTML = q;
-    p.style = 'font-size:14px';
+    p.style = 'font-size:14px;line-height:1rem';;
     questionsEl.appendChild(p);
   });
   mainEl.appendChild(questionsEl);
