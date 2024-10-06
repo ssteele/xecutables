@@ -9,27 +9,26 @@
 
 // update me
 const cluesText = `
-• A $5000 bill for 20 minutes of work was discovered next to a net.
-• A bone-detector gave a positive reading in the movie theater.
-• A messenger from The Final Association of the Closed Bow gave Logico a note that read: RLOD ELVAREDN WAS EESN GHNNAIG URDANO TEW. (Decode.)
-• Admiral Navy was seen in the Michelin-starred cafeteria.
-• Blue eyes stared at a shiv made from a Mont Blanc.
-• General Coffee brought a diamond-encrusted skeleton key.
-• Mx. Tangerine was seen beneath the cushions of a velvet seat.
-• Dean Glaucous's fingerprint was found on a poisoned birthday cake.
-• A medium-weight weapon was found in the guard tower.
-• The spa is wet.
-• The movie theater has red velvet seats.
-• A pair of literal golden handcuffs was clearly used to commit the crime.
+• Comrade Champagne never set foot at the stone bridge.
+• A weapon made (at least) in part of paper was brought by the person who had no known motive.
+• One of Logico's contacts in The Fraternity of the Blue Eyes gave him this tip: JDGUE ENPI TGORHUB NA NYRGA LAALM. (Decode.)
+• Silverton the Legend wanted to silence a witness.
+• Whoever wanted to break into the Industry was a Capricorn.
+• A medium-weight weapon was found in the library.
+• Earl Grey's fingerprint was found on The Big Red Book.
 `;
 
 const statementsText = `
+• Comrade Champagne: The Big Red Book was in the old mill.
+• Earl Grey: Comrade Champagne brought a pitchfork.
+• Judge Pine: Earl Grey was not at the stone bridge.
+• Silverton the Legend: The Big Red Book was not by the ancient ruins.
 `;
 
 const questions = [
   '• Who was with you?',
   '• What item did you have?',
-  // '• What was the motive?',
+  '• What was the motive?',
   '• Where were you?',
 ];
 
@@ -183,6 +182,7 @@ if (questions.find(q => !!q)) {
   questionsHeader.innerHTML = 'QUESTIONS';
   questionsEl.appendChild(questionsHeader);
   questions.map(q => {
+    // @todo: check if motives exist
     let p = document.createElement('p');
     p.innerHTML = q;
     p.style = 'font-size:14px;line-height:1rem';;
