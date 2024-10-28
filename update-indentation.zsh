@@ -4,7 +4,7 @@
 # find . -type f -iname "*.js" > file-list.txt
 
 # run
-# updateIndentation.zsh file-list.txt
+# updateIndentation file-list.txt
 
 safeMode=false
 
