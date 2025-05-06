@@ -5,10 +5,16 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-zsh_exports=''
-zsh_aliases=''
+zsh_exports=()
 
-if [[ ! -z $zsh_exports ]] || [[ ! -z $zsh_aliases ]]; then
+source_bootstrap=false
+for e in "${zsh_exports[@]}"; do
+    if [[ -z ${(P)e} ]]; then
+        source_bootstrap=true
+    fi
+done
+
+if $source_bootstrap; then
     source ${xec}/_bootstrap.zsh
 fi
 

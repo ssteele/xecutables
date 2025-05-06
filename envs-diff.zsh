@@ -5,10 +5,16 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-zsh_exports=''
-zsh_aliases='envsCopy'
+zsh_exports=('xec')
 
-if [[ ! -z $zsh_exports ]] || [[ ! -z $zsh_aliases ]]; then
+source_bootstrap=false
+for e in "${zsh_exports[@]}"; do
+    if [[ -z ${(P)e} ]]; then
+        source_bootstrap=true
+    fi
+done
+
+if $source_bootstrap; then
     source ${xec}/_bootstrap.zsh
 fi
 
@@ -30,5 +36,6 @@ else
     envFile="$1"
 fi
 
-envsCopy > ${HOME}/_env
+${xec}/envs-copy.zsh > ${HOME}/_env
 diff ${envFile} ${HOME}/_env
+echo ''

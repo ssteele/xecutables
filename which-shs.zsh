@@ -5,10 +5,16 @@
 #     VERIFY ENVIRONMENT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-zsh_exports='ss'
-zsh_aliases=''
+zsh_exports=('ss')
 
-if [[ ! -z $zsh_exports ]] || [[ ! -z $zsh_aliases ]]; then
+source_bootstrap=false
+for e in "${zsh_exports[@]}"; do
+    if [[ -z ${(P)e} ]]; then
+        source_bootstrap=true
+    fi
+done
+
+if $source_bootstrap; then
     source ${xec}/_bootstrap.zsh
 fi
 
@@ -25,10 +31,8 @@ else
 fi
 
 echo ''
-
 grep ${input} ~/.zshrc
 grep -r ${input} ${ss}/zsh
-echo ''
 
-alias ${input}
 echo ''
+alias ${input}
