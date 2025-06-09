@@ -9,26 +9,25 @@
 
 // update me
 const cluesText = `
-• Comrade Champagne never set foot at the stone bridge.
-• A weapon made (at least) in part of paper was brought by the person who had no known motive.
-• One of Logico's contacts in The Fraternity of the Blue Eyes gave him this tip: JDGUE ENPI TGORHUB NA NYRGA LAALM. (Decode.)
-• Silverton the Legend wanted to silence a witness.
-• Whoever wanted to break into the Industry was a Capricorn.
-• A medium-weight weapon was found in the library.
-• Earl Grey's fingerprint was found on The Big Red Book.
+• A messenger from The Guild of the Closed Goblet gave Logico a note that read: EIVC DTPRENSIE EVUAM SAW ESEN HTIW A YHIPCNOT EKPOCT WTCAH. (Decode.)
+• Admiral Navy was not in the desert.
+• Captain Slate was lugging around a heavy-weight weapon.
+• A crystal ball was not in a kitschy restaurant.
+• Whoever was in a kitschy restaurant was left-handed.
+• Either Captain Slate brought a rolled-up newspaper with a crowbar inside or Chef Aubergine was in the quaint apartment. (But not both!)
+• Captain Slate's fingerprint was found in the mysterious cave.
+• Grandmaster Rose was lugging around a heavy-weight weapon.
+• A brown hair was found wrapped around the poisoned tincture.
+• A bag of magick sand was clearly used to commit the crime.
 `;
 
 const statementsText = `
-• Comrade Champagne: The Big Red Book was in the old mill.
-• Earl Grey: Comrade Champagne brought a pitchfork.
-• Judge Pine: Earl Grey was not at the stone bridge.
-• Silverton the Legend: The Big Red Book was not by the ancient ruins.
 `;
 
 const questions = [
   '• Who was with you?',
   '• What item did you have?',
-  '• What was the motive?',
+  // '• What was the motive?',
   '• Where were you?',
 ];
 
