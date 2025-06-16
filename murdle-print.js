@@ -9,16 +9,14 @@
 
 // update me
 const cluesText = `
-• A messenger from The Guild of the Closed Goblet gave Logico a note that read: EIVC DTPRENSIE EVUAM SAW ESEN HTIW A YHIPCNOT EKPOCT WTCAH. (Decode.)
-• Admiral Navy was not in the desert.
-• Captain Slate was lugging around a heavy-weight weapon.
-• A crystal ball was not in a kitschy restaurant.
-• Whoever was in a kitschy restaurant was left-handed.
-• Either Captain Slate brought a rolled-up newspaper with a crowbar inside or Chef Aubergine was in the quaint apartment. (But not both!)
-• Captain Slate's fingerprint was found in the mysterious cave.
-• Grandmaster Rose was lugging around a heavy-weight weapon.
-• A brown hair was found wrapped around the poisoned tincture.
-• A bag of magick sand was clearly used to commit the crime.
+• Mrs. Ruby was lugging around a heavy-weight weapon.
+• Either a poisoned goblet was in a secret chamber or Président Amaranth was in a secret chamber. (But not both!)
+• The suspect in a lonely tower had red hair.
+• Mrs. Ruby's fingerprint was found in the dungeon.
+• An Aquarius was in the Screaming Forest. Typical Aquarius.
+• Whoever had karate hands was right-handed.
+• An anonymous source that Logico trusted passed him a message that read: REGNLEA FCOEEF GRHOTBU AN ICNANTE UEGPLA. (Decode.)
+• Logico determined the murder took place in the great hall based on the clues he found there, specifically the corpse.
 `;
 
 const statementsText = `
