@@ -1,6 +1,6 @@
 
 // type `dailyPuzzleSetup`, click to show source file, debugger on today_day_number, then overwite today_date
-// today_date = new Date('2024-01-08T12:00:00');
+// today_date = new Date('2025-06-16T12:00:00');
 // note: main murdles don't populate correctly on mondays and sundays
 
 // unjumblePhrase 'A ANSIT FMOR YERV EVSIPEXEN KIN WSA EDCSEORIDV TWE.'
@@ -8,24 +8,34 @@
 // reverseStrings 'GYM CHESSBOXING THE'
 
 // update me
+sectionsToRender = {
+  people: true,
+  items: true,
+  locations: true,
+  questions: true,
+}
+
 const cluesText = `
-• Mrs. Ruby was lugging around a heavy-weight weapon.
-• Either a poisoned goblet was in a secret chamber or Président Amaranth was in a secret chamber. (But not both!)
-• The suspect in a lonely tower had red hair.
-• Mrs. Ruby's fingerprint was found in the dungeon.
-• An Aquarius was in the Screaming Forest. Typical Aquarius.
-• Whoever had karate hands was right-handed.
-• An anonymous source that Logico trusted passed him a message that read: REGNLEA FCOEEF GRHOTBU AN ICNANTE UEGPLA. (Decode.)
-• Logico determined the murder took place in the great hall based on the clues he found there, specifically the corpse.
+• The person with a snowglobe wanted to escape blackmail.
+• Brother Brownstone's fingerprint was found at the 5-star restaurant.
+• Vice President Mauve did not have no known motive.
+• An anonymous source that Logico trusted passed him a message that read: NAED OGSAUULC ATWDEN OT AEGR IHTW YLSJEOAU. (Decode.)
+• The person who wanted to break into the Industry was in the real estate office.
+• The Duchess of Vermillion liked the person who had a stone dagger.
+• The person with the climbing rope had brown eyes.
 `;
 
 const statementsText = `
+• Vice President Mauve: A stone dagger was not at the boutique hotel.
+• The Duchess of Vermillion: Vice President Mauve was not at the 5-star restaurant.
+• Brother Brownstone: In the name of God, Vice President Mauve brought a snowglobe.
+• Dean Glaucous: Vice President Mauve was at the boutique hotel.
 `;
 
 const questions = [
   '• Who was with you?',
   '• What item did you have?',
-  // '• What was the motive?',
+  '• What was the motive?',
   '• Where were you?',
 ];
 
@@ -57,6 +67,14 @@ try {
   shsWeapons = weapons.map(weapon => shuffledweapons.find(sw => sw?.name === weapon));
 } catch (e) {
   console.error('Error fetching weapon details', e);
+}
+
+// fetch location details
+let shsLocations = [];
+try {
+  shsLocations = rooms.map(room => shuffledrooms.find(sw => sw?.name === room));
+} catch (e) {
+  console.error('Error fetching location details', e);
 }
 
 // open the notebook
@@ -102,7 +120,7 @@ rowHeaderEls
 const mainEl = $('#mainbox')[0];
 
 // add people
-if (shsSuspects.length) {
+if (sectionsToRender?.people && shsSuspects.length) {
   let peopleEl = document.createElement('div');
   const peopleHeader = document.createElement('h3');
   peopleHeader.innerHTML = 'PEOPLE';
@@ -111,7 +129,7 @@ if (shsSuspects.length) {
     shsSuspects.map(s => {
       let p = document.createElement('p');
       p.innerHTML = `${s?.name} | ${inchesToFeet(s?.height)} | ${s?.hand}-handed | ${s?.eyes} eyes | ${s?.hair} hair | born ${s?.birthday} (${s?.sign})`;
-      p.style = 'font-size:14px;line-height:1rem';
+      p.style = 'font-size:13px;line-height:1rem';
       peopleEl.appendChild(p);
     });
   } catch (e) {
@@ -121,7 +139,7 @@ if (shsSuspects.length) {
 }
 
 // add items
-if (shsWeapons.length) {
+if (sectionsToRender?.items && shsWeapons.length) {
   let itemsEl = document.createElement('div');
   const itemsHeader = document.createElement('h3');
   itemsHeader.innerHTML = 'ITEMS';
@@ -131,13 +149,32 @@ if (shsWeapons.length) {
       let p = document.createElement('p');
       const clue = s?.clue ? ` | look for ${s?.clue} left behind` : '';
       p.innerHTML = `${s?.name} | ${s?.weight}-weight | made of ${s?.materials.join(' & ')}${clue}`;
-      p.style = 'font-size:14px;line-height:1rem';
+      p.style = 'font-size:13px;line-height:1rem';
       itemsEl.appendChild(p);
     });
   } catch (e) {
     console.error('Error rendering suspect details', e);
   }
   mainEl.appendChild(itemsEl);
+}
+
+// add locations
+if (sectionsToRender?.locations && shsLocations.length) {
+  let locationsEl = document.createElement('div');
+  const itemsHeader = document.createElement('h3');
+  itemsHeader.innerHTML = 'LOCATIONS';
+  locationsEl.appendChild(itemsHeader);
+  try {
+    shsLocations.map(s => {
+      let p = document.createElement('p');
+      p.innerHTML = `${s?.name} | ${s?.indoors ? 'indoors' : 'outdoors'} | ${s?.description}`;
+      p.style = 'font-size:13px;line-height:1rem';
+      locationsEl.appendChild(p);
+    });
+  } catch (e) {
+    console.error('Error rendering suspect details', e);
+  }
+  mainEl.appendChild(locationsEl);
 }
 
 // add clues
@@ -150,7 +187,7 @@ if (clues.find(c => !!c)) {
   clues.map(c => {
     let p = document.createElement('p');
     p.innerHTML = c.split(' (?')[0];
-    p.style = 'font-size:14px;line-height:1rem';
+    p.style = 'font-size:13px;line-height:1rem';
     cluesEl.appendChild(p);
   });
   mainEl.appendChild(cluesEl);
@@ -166,14 +203,14 @@ if (statements.find(s => !!s)) {
   statements.map(s => {
     let p = document.createElement('p');
     p.innerHTML = s.split(' (?')[0];
-    p.style = 'font-size:14px;line-height:1rem';;
+    p.style = 'font-size:13px;line-height:1rem';;
     statementsEl.appendChild(p);
   });
   mainEl.appendChild(statementsEl);
 }
 
 // add questions
-if (questions.find(q => !!q)) {
+if (sectionsToRender?.questions && questions.find(q => !!q)) {
   let questionsEl = document.createElement('div');
   const questionsHeader = document.createElement('h3');
   questionsHeader.innerHTML = 'QUESTIONS';
@@ -182,7 +219,7 @@ if (questions.find(q => !!q)) {
     // @todo: check if motives exist
     let p = document.createElement('p');
     p.innerHTML = q;
-    p.style = 'font-size:14px;line-height:1rem';;
+    p.style = 'font-size:13px;line-height:1rem';;
     questionsEl.appendChild(p);
   });
   mainEl.appendChild(questionsEl);
