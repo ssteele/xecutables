@@ -16,26 +16,21 @@ sectionsToRender = {
 }
 
 const cluesText = `
-• The person with a snowglobe wanted to escape blackmail.
-• Brother Brownstone's fingerprint was found at the 5-star restaurant.
-• Vice President Mauve did not have no known motive.
-• An anonymous source that Logico trusted passed him a message that read: NAED OGSAUULC ATWDEN OT AEGR IHTW YLSJEOAU. (Decode.)
-• The person who wanted to break into the Industry was in the real estate office.
-• The Duchess of Vermillion liked the person who had a stone dagger.
-• The person with the climbing rope had brown eyes.
+• Murdle: Volume 2 was not in the sleeping car.
+• Grandmaster Rose was in the caboose.
+• A messenger from The Mystical Association of the Closed Revolution gave Logico a note that read: HVS HOZZSGH GIGDSQH PFCIUVH ZSOHVSF ZIUUOUS. (Decode.)
+• A rock-detector gave a positive reading in the dining car.
+• Analysts discovered traces of a weapon made of paper on the clothing of Signor Emerald.
+• The old Russian woman's body was found beside a smokestack.
 `;
 
 const statementsText = `
-• Vice President Mauve: A stone dagger was not at the boutique hotel.
-• The Duchess of Vermillion: Vice President Mauve was not at the 5-star restaurant.
-• Brother Brownstone: In the name of God, Vice President Mauve brought a snowglobe.
-• Dean Glaucous: Vice President Mauve was at the boutique hotel.
 `;
 
 const questions = [
   '• Who was with you?',
   '• What item did you have?',
-  '• What was the motive?',
+  // '• What was the motive?',
   '• Where were you?',
 ];
 
