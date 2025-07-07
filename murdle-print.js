@@ -16,15 +16,14 @@ sectionsToRender = {
 }
 
 const cluesText = `
-• Murdle: Volume 2 was not in the sleeping car.
-• Grandmaster Rose was in the caboose.
-• A messenger from The Mystical Association of the Closed Revolution gave Logico a note that read: HVS HOZZSGH GIGDSQH PFCIUVH ZSOHVSF ZIUUOUS. (Decode.)
-• A rock-detector gave a positive reading in the dining car.
-• Analysts discovered traces of a weapon made of paper on the clothing of Signor Emerald.
-• The old Russian woman's body was found beside a smokestack.
+• The suspect with the ordinary brick also had grey hair.
+• A bear trap was certainly not near the sound of whispers.
 `;
 
 const statementsText = `
+• Deacon Verdigris: As a Godly woman, Comrade Champagne brought a corgi stampede.
+• Comrade Champagne: General Coffee was on the docks.
+• General Coffee: Argh... Deacon Verdigris was by the ancient ruins.
 `;
 
 const questions = [
@@ -219,6 +218,10 @@ if (sectionsToRender?.questions && questions.find(q => !!q)) {
   });
   mainEl.appendChild(questionsEl);
 }
+
+// hide any embeded links
+const links = [...mainEl.querySelectorAll('a')];
+links.map(a => a.style.setProperty('display', 'none'));
 
 // add the date
 mainEl.appendChild(dateEl);
