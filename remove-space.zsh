@@ -28,7 +28,11 @@ if [[ -n "$1" ]]; then
     if [[ "$1" =~ ^[^.]*$ ]] || [[ "$1" =~ ^\.[a-zA-Z0-9]+$ ]]; then
         # it's a file type (no dots, or starts with single dot followed by characters)
         fileType="$1"
-        fileType="${fileType#.}"                                    # strip preceding dot if it exists
+
+        # strip preceding dot if it exists
+        fileType="${fileType#.}"
+
+        # strip trailing spaces for all files of type
         find . -type f -name "*.${fileType}" -exec perl -i -pe 's/[ \t]+$//' {} +
     else
         # it's a list of files as multiple arguments
@@ -37,6 +41,7 @@ if [[ -n "$1" ]]; then
         # process each file in the list
         for file in "${files[@]}"; do
             if [[ -f "$file" ]]; then
+                # strip trailing spaces for all specified files
                 perl -i -pe 's/[ \t]+$//' "$file"
             else
                 echo "Warning: File '$file' not found or is not a regular file"
@@ -44,5 +49,6 @@ if [[ -n "$1" ]]; then
         done
     fi
 else
+    # strip trailing spaces for all files in current/nested directories
     find . -type f -exec perl -i -pe 's/[ \t]+$//' {} +
 fi
