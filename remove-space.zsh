@@ -29,7 +29,7 @@ if [[ -n "$1" ]]; then
         # it's a file type (no dots, or starts with single dot followed by characters)
         fileType="$1"
         fileType="${fileType#.}"                                    # strip preceding dot if it exists
-        find . -type f -name "*.${fileType}" -exec perl -i -pe 's/^\s+$/\n/' {} +
+        find . -type f -name "*.${fileType}" -exec perl -i -pe 's/[ \t]+$//' {} +
     else
         # it's a list of files as multiple arguments
         files=("$@")
@@ -37,12 +37,12 @@ if [[ -n "$1" ]]; then
         # process each file in the list
         for file in "${files[@]}"; do
             if [[ -f "$file" ]]; then
-                perl -i -pe 's/^\s+$/\n/' "$file"
+                perl -i -pe 's/[ \t]+$//' "$file"
             else
                 echo "Warning: File '$file' not found or is not a regular file"
             fi
         done
     fi
 else
-    find . -type f -exec perl -i -pe 's/^\s+$/\n/' {} +
+    find . -type f -exec perl -i -pe 's/[ \t]+$//' {} +
 fi
