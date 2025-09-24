@@ -31,15 +31,8 @@ if [[ -n "$1" ]]; then
         fileType="${fileType#.}"                                    # strip preceding dot if it exists
         find . -type f -name "*.${fileType}" -exec perl -i -pe 's/^\s+$/\n/' {} +
     else
-        # it's a list of files (either space-delimited in $1 or multiple arguments)
-        if [[ $# -eq 1 ]]; then
-            # single argument with space-delimited files
-            files=("${(@s/ /)1}")                                   # split $1 on spaces into array
-        else
-            # multiple arguments, each is a file
-            files=("$@")                                            # use all arguments as array
-        fi
-        echo -n 'files: '; echo $files
+        # it's a list of files as multiple arguments
+        files=("$@")
 
         # process each file in the list
         for file in "${files[@]}"; do
